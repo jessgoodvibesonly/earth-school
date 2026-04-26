@@ -39,7 +39,6 @@ export default function Home() {
         <p className="intro">
           You’re here, inside a body, moving through a world that feels completely real.
         </p>
-
         <h1>EARTH SCHOOL</h1>
 
         <h2>A Temporary Human Experience</h2>
