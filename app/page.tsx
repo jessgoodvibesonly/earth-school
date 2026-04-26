@@ -51,7 +51,6 @@ export default function Home() {
           Where <strong>The Sims meets Grand Theft Auto with a soul.</strong>
         </p>
 
-        <div className="button">Enter The Experience</div>
       </section>
 
       <section className="section bigIdea">
