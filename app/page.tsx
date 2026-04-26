@@ -38,7 +38,7 @@ export default function Home() {
           You’re here, inside a body, moving through a world that feels completely real.
         </p>
 
-        <h1>EARTH SCHOOL</h1>
+        <h1>EARTH SCHOOL<br />THE GAME</h1>
 
         <h2>A Temporary Human Experience</h2>
 
@@ -73,6 +73,8 @@ export default function Home() {
       <section className="diner">
         <div className="dinerInner">
           <p className="micro">Vertical Slice One</p>
+
+          <img className="dinerImage" src="/diner.png" alt="The Neon Diner" />
 
           <h2>THE NEON DINER</h2>
 
@@ -431,6 +433,16 @@ export default function Home() {
           border: 1px solid rgba(255,255,255,0.14);
           box-shadow: 0 0 70px rgba(0,255,210,0.18);
           backdrop-filter: blur(12px);
+        }
+
+        .dinerImage {
+          width: min(100%, 760px);
+          height: auto;
+          border-radius: 20px;
+          border: 1px solid rgba(255,255,255,0.18);
+          box-shadow: 0 0 48px rgba(0,255,210,0.25);
+          margin: 0 auto 28px;
+          display: block;
         }
 
         .diner p {
