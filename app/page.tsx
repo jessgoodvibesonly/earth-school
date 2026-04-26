@@ -38,9 +38,12 @@ export default function Home() {
           You’re here, inside a body, moving through a world that feels completely real.
         </p>
 
-        <h1>EARTH SCHOOL</h1>
+        <h1 className="heroTitle">
+          <span>EARTH SCHOOL</span>
+          <span className="heroGame">THE GAME</span>
+        </h1>
 
-        <h2>A Temporary Human Experience</h2>
+        <p className="heroSubtitle">A Temporary Human Experience</p>
 
         <p className="intro">
           What if this is a 3D simulation?
@@ -76,13 +79,17 @@ export default function Home() {
 
           <h2>THE NEON DINER</h2>
 
+          <div className="dinerImageWrap">
+            <img src="/diner.png" alt="Rainy neon diner at night" className="dinerImage" />
+            <div className="dinerImageOverlay" />
+          </div>
+
           <p>
             A rainy night. A glowing retro diner. A moment that repeats until you notice it.
           </p>
 
           <p>
-            The lights shift. The sound changes. Dialogue bends. The environment starts
-            reflecting the player back to themselves.
+            The lights shift. The sound changes. The characters notice you noticing.
           </p>
 
           <p className="quote">This is where awareness begins.</p>
@@ -94,13 +101,14 @@ export default function Home() {
         <h2>Pause. Reset. Choose differently.</h2>
 
         <p>
-          EARTH SCHOOL includes a system inspired by hypnotherapy, guided meditation,
-          reflective prompts, breath cues, and state-shifting moments.
+          EARTH SCHOOL is being developed with a system inspired by hypnotherapy, guided
+          meditation, reflective prompts, breath cues, and state-shifting moments.
         </p>
 
         <p>
-          The more aware the player becomes, the more control they gain. This is not
-          about escaping reality. It is about becoming conscious inside it.
+          The more aware the player becomes, the more intentional their choices can
+          become. This prototype vision is intended to explore conscious participation
+          rather than escape.
         </p>
       </section>
 
@@ -129,8 +137,9 @@ export default function Home() {
         </p>
 
         <p>
-          It begins in VR and extends into AR, supporting real-world connection beyond
-          the headset through companion prompts and awareness-based interaction.
+          It is being developed as a vertical slice concept that starts in VR and is
+          designed to grow into AR and a future companion layer that supports real-world
+          reflection beyond the headset.
         </p>
       </section>
 
@@ -166,8 +175,8 @@ export default function Home() {
         </p>
 
         <p>
-          The concept is designed for Meta Quest, spatial computing, Ray-Ban Meta
-          glasses, AR layers, AI companions, and future mixed reality experiences.
+          The prototype vision is intended for Meta Quest, spatial computing, Ray-Ban
+          Meta glasses, AR layers, AI companions, and future mixed reality pathways.
         </p>
 
         <p className="quote">
@@ -180,9 +189,9 @@ export default function Home() {
         <h2>A new category of experience</h2>
 
         <p className="wide">
-          EARTH SCHOOL is positioned as a cross-platform awareness system spanning VR,
-          AR, spatial computing, AI companions, immersive wellbeing, and real-world
-          behavioral interaction.
+          EARTH SCHOOL is being developed as an early-stage prototype vision for a
+          cross-platform awareness system spanning VR, AR, spatial computing, AI
+          companions, immersive wellbeing, and real-world behavioral interaction.
         </p>
 
         <div className="cards">
@@ -354,6 +363,34 @@ export default function Home() {
             0 0 70px rgba(190,120,255,0.75);
         }
 
+        .heroTitle {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 12px;
+        }
+
+        .heroGame {
+          font-size: clamp(28px, 4.2vw, 58px);
+          line-height: 1;
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          opacity: 0.95;
+          text-shadow:
+            0 0 22px rgba(255,255,255,0.2),
+            0 0 40px rgba(0,255,210,0.42);
+        }
+
+        .heroSubtitle {
+          font-size: clamp(26px, 4vw, 52px);
+          line-height: 1.1;
+          margin: 0 0 28px;
+          text-align: center;
+          text-shadow: 0 0 45px rgba(190,120,255,0.5);
+        }
+
         h2 {
           font-size: clamp(38px, 6vw, 86px);
           line-height: 1.08;
@@ -424,13 +461,43 @@ export default function Home() {
         }
 
         .dinerInner {
-          max-width: 980px;
+          max-width: 1080px;
           border-radius: 34px;
           padding: 56px 34px;
           background: rgba(0,0,0,0.28);
           border: 1px solid rgba(255,255,255,0.14);
           box-shadow: 0 0 70px rgba(0,255,210,0.18);
           backdrop-filter: blur(12px);
+        }
+
+        .dinerImageWrap {
+          position: relative;
+          width: min(100%, 1000px);
+          margin: 12px auto 34px;
+          border-radius: 26px;
+          overflow: hidden;
+          border: 1px solid rgba(255,255,255,0.2);
+          box-shadow:
+            0 0 45px rgba(0,255,210,0.24),
+            0 0 65px rgba(190,120,255,0.24),
+            inset 0 0 0 1px rgba(255,255,255,0.08);
+        }
+
+        .dinerImage {
+          width: 100%;
+          display: block;
+          aspect-ratio: 16/7;
+          object-fit: cover;
+        }
+
+        .dinerImageOverlay {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background:
+            linear-gradient(180deg, rgba(8,0,21,0.12), rgba(8,0,21,0.45)),
+            radial-gradient(circle at 20% 80%, rgba(0,255,210,0.18), transparent 45%),
+            radial-gradient(circle at 75% 20%, rgba(190,120,255,0.22), transparent 50%);
         }
 
         .diner p {
@@ -547,6 +614,14 @@ export default function Home() {
 
           .intro, .section p, .diner p, .teaserBox p {
             font-size: 18px;
+          }
+
+          .heroGame {
+            letter-spacing: 0.14em;
+          }
+
+          .dinerImage {
+            aspect-ratio: 16/9;
           }
 
           .card {
