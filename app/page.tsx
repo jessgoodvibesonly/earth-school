@@ -51,7 +51,20 @@ export default function Home() {
           Where <strong>The Sims meets Grand Theft Auto with a soul.</strong>
         </p>
 
-        <div className="button">Enter The Experience</div>
+        <div className="ctaRow">
+          <div className="button">Enter The Experience</div>
+          <a
+            className="ctaButton"
+            href="https://calendly.com/aspiritualwarriorspath/synergy-call-aspire-x-earth-school-x-partnerships"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Talk Synergy With Jess
+          </a>
+        </div>
+        <p className="ctaSupport">
+          Have an idea, partnership angle, Meta/VR connection, investor path, or wild Earth School thought? Let’s talk.
+        </p>
       </section>
 
       <section className="section bigIdea">
@@ -233,6 +246,18 @@ export default function Home() {
 
         <p className="soft">Are you reacting?</p>
         <p className="finalLine">Or are you playing?</p>
+
+        <a
+          className="ctaButton"
+          href="https://calendly.com/aspiritualwarriorspath/synergy-call-aspire-x-earth-school-x-partnerships"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Talk Synergy With Jess
+        </a>
+        <p className="ctaSupport">
+          Have an idea, partnership angle, Meta/VR connection, investor path, or wild Earth School thought? Let’s talk.
+        </p>
       </section>
 
       <style>{`
@@ -452,6 +477,54 @@ export default function Home() {
           backdrop-filter: blur(10px);
         }
 
+
+        .ctaRow {
+          margin-top: 28px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 16px;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .ctaButton {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 0;
+          padding: 16px 36px;
+          border-radius: 999px;
+          border: 1px solid rgba(170, 255, 245, 0.72);
+          color: #e8fcff;
+          text-decoration: none;
+          font-size: 18px;
+          letter-spacing: 0.01em;
+          background: linear-gradient(135deg, rgba(128, 62, 255, 0.5), rgba(0, 211, 210, 0.25));
+          box-shadow:
+            0 0 24px rgba(145, 95, 255, 0.68),
+            0 0 38px rgba(0, 255, 225, 0.3),
+            inset 0 0 22px rgba(255, 255, 255, 0.12);
+          backdrop-filter: blur(10px);
+          transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+        }
+
+        .ctaButton:hover {
+          transform: translateY(-2px) scale(1.01);
+          box-shadow:
+            0 0 36px rgba(145, 95, 255, 0.78),
+            0 0 52px rgba(0, 255, 225, 0.46),
+            inset 0 0 24px rgba(255, 255, 255, 0.18);
+          filter: brightness(1.08);
+        }
+
+        .ctaSupport {
+          max-width: 860px;
+          margin: 18px auto 0;
+          font-size: 18px;
+          line-height: 1.6;
+          opacity: 0.9;
+        }
+
         .section {
           padding: 120px 28px;
           text-align: center;
@@ -619,6 +692,10 @@ export default function Home() {
           line-height: 1.7;
         }
 
+        .final .ctaButton {
+          margin-top: 24px;
+        }
+
         .finalLine {
           font-size: clamp(38px, 6vw, 86px) !important;
           margin-top: 8px;
@@ -633,6 +710,17 @@ export default function Home() {
 
           .intro, .section p, .diner p, .teaserBox p {
             font-size: 18px;
+          }
+
+          .ctaButton {
+            width: 100%;
+            max-width: 380px;
+            padding: 15px 28px;
+            font-size: 16px;
+          }
+
+          .ctaSupport {
+            font-size: 16px;
           }
 
           .card {
