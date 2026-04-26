@@ -4,12 +4,12 @@ export default function Home() {
       style={{
         minHeight: "100vh",
         background:
-          "radial-gradient(circle at top, rgba(120,180,170,0.45), transparent 35%), linear-gradient(180deg, #071716 0%, #000 45%, #050008 100%)",
+          "radial-gradient(circle at 50% 20%, rgba(120,255,230,0.15), transparent 30%), linear-gradient(180deg, #061212 0%, #000 45%, #050008 100%)",
         color: "white",
         fontFamily: "Georgia, serif",
-        overflow: "hidden",
       }}
     >
+      {/* HERO */}
       <section
         style={{
           minHeight: "100vh",
@@ -18,53 +18,26 @@ export default function Home() {
           justifyContent: "center",
           textAlign: "center",
           padding: "60px 28px",
-          position: "relative",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.16), transparent 10%), radial-gradient(circle at 80% 30%, rgba(255,120,220,0.18), transparent 16%), radial-gradient(circle at 50% 80%, rgba(120,220,255,0.12), transparent 18%)",
-            opacity: 0.9,
-          }}
-        />
-
-        <div style={{ maxWidth: "1100px", position: "relative", zIndex: 2 }}>
-          <p
-            style={{
-              letterSpacing: "5px",
-              textTransform: "uppercase",
-              fontSize: "13px",
-              opacity: 0.8,
-              marginBottom: "24px",
-            }}
-          >
-            A consciousness-shifting game experience
-          </p>
-
+        <div style={{ maxWidth: "1000px" }}>
           <h1
             style={{
-              fontSize: "clamp(68px, 13vw, 180px)",
+              fontSize: "clamp(70px, 12vw, 160px)",
               lineHeight: "0.9",
-              fontWeight: 400,
               margin: 0,
-              textShadow: "0 0 34px rgba(255,255,255,0.25)",
+              textShadow: "0 0 40px rgba(255,255,255,0.25)",
             }}
           >
-            EARTH
-            <br />
-            SCHOOL
+            EARTH SCHOOL
           </h1>
 
           <h2
             style={{
-              fontSize: "clamp(24px, 4vw, 54px)",
+              fontSize: "clamp(24px, 4vw, 48px)",
               fontWeight: 300,
-              marginTop: "30px",
-              marginBottom: "34px",
-              color: "#e7f8f5",
+              marginTop: "24px",
+              color: "#dffaf4",
             }}
           >
             A Temporary Human Experience
@@ -72,133 +45,173 @@ export default function Home() {
 
           <p
             style={{
-              maxWidth: "760px",
-              margin: "0 auto",
-              fontSize: "21px",
-              lineHeight: "1.75",
-              color: "rgba(255,255,255,0.86)",
+              marginTop: "30px",
+              fontSize: "20px",
+              lineHeight: "1.8",
+              opacity: 0.85,
             }}
           >
-            What if life was not random?
+            This is not just a game.
             <br />
-            What if your attention changed the world around you?
+            This is an experience.
             <br />
-            What if awareness was the input?
+            <br />
+            A space where awareness shapes reality,
+            <br />
+            and perception becomes the interface.
           </p>
 
           <div
             style={{
-              marginTop: "44px",
+              marginTop: "40px",
               display: "inline-block",
-              padding: "16px 34px",
-              border: "1px solid rgba(255,255,255,0.75)",
+              padding: "16px 32px",
+              border: "1px solid rgba(255,255,255,0.7)",
               borderRadius: "999px",
-              boxShadow: "0 0 28px rgba(150,255,240,0.28)",
-              fontSize: "16px",
-              letterSpacing: "1px",
+              boxShadow: "0 0 25px rgba(120,255,230,0.25)",
             }}
           >
-            Enter The Experience
+            Enter Earth School
           </div>
         </div>
       </section>
 
-      <section style={{ padding: "90px 28px", textAlign: "center" }}>
-        <h3 style={{ fontSize: "46px", fontWeight: 400, marginBottom: "24px" }}>
-          This is not just a game.
+      {/* WELLBEING POSITIONING */}
+      <section
+        style={{
+          padding: "100px 28px",
+          textAlign: "center",
+        }}
+      >
+        <h3 style={{ fontSize: "44px", marginBottom: "30px" }}>
+          An immersive wellbeing experience
         </h3>
 
         <p
           style={{
-            maxWidth: "860px",
+            maxWidth: "900px",
             margin: "0 auto",
             fontSize: "20px",
-            lineHeight: "1.8",
-            color: "rgba(255,255,255,0.78)",
+            lineHeight: "1.9",
+            opacity: 0.85,
           }}
         >
-          EARTH SCHOOL is an interactive experience where perception shapes the
-          environment, choices create consequences, and awareness changes what
-          the player can see, hear, feel, and understand.
+          EARTH SCHOOL is designed as an immersive wellbeing experience,
+          not a traditional game.
+          <br /><br />
+          It encourages awareness, presence, and reflection,
+          creating a grounded environment where users can observe
+          how attention and perception influence their experience.
         </p>
       </section>
 
+      {/* CORE CONCEPT */}
+      <section
+        style={{
+          padding: "80px 28px",
+          maxWidth: "1100px",
+          margin: "0 auto",
+          textAlign: "center",
+        }}
+      >
+        <h3 style={{ fontSize: "44px", marginBottom: "30px" }}>
+          The Experience
+        </h3>
+
+        <p
+          style={{
+            fontSize: "20px",
+            lineHeight: "1.9",
+            opacity: 0.85,
+          }}
+        >
+          EARTH SCHOOL blends consciousness, psychology, storytelling,
+          and immersive technology into a new category of experience.
+          <br /><br />
+          Players move through environments where their internal state,
+          attention, and choices influence what they see, hear, and feel.
+          <br /><br />
+          Every interaction becomes a mirror.
+          Every moment becomes a lesson.
+        </p>
+      </section>
+
+      {/* SYSTEMS */}
       <section
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-          gap: "22px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: "20px",
           maxWidth: "1100px",
           margin: "0 auto",
-          padding: "40px 28px 100px",
+          padding: "60px 28px",
         }}
       >
         {[
-          ["Awareness as Input", "The player evolves through attention, reflection, and conscious choice."],
-          ["The Filter System", "Reality shifts as the player refines perception, energy, and internal state."],
-          ["The Vessel", "Mind, body, emotion, and environment become part of the gameplay system."],
-          ["Immersive Technology", "Designed for spatial computing, VR, AR, and future companion experiences."],
+          ["Awareness as Input", "Your attention directly influences the experience."],
+          ["The Filter", "Perception shapes the world you experience."],
+          ["The Vessel", "Your internal state affects your external reality."],
+          ["Conscious Choice", "Every decision creates a new path forward."],
         ].map(([title, text]) => (
           <div
             key={title}
             style={{
               padding: "28px",
-              border: "1px solid rgba(255,255,255,0.14)",
-              borderRadius: "24px",
-              background: "rgba(255,255,255,0.055)",
-              boxShadow: "0 0 40px rgba(120,255,235,0.08)",
-              minHeight: "190px",
+              border: "1px solid rgba(255,255,255,0.15)",
+              borderRadius: "20px",
+              background: "rgba(255,255,255,0.05)",
             }}
           >
-            <h4 style={{ fontSize: "24px", marginBottom: "14px" }}>{title}</h4>
-            <p style={{ lineHeight: "1.65", color: "rgba(255,255,255,0.72)" }}>
-              {text}
-            </p>
+            <h4 style={{ fontSize: "22px", marginBottom: "12px" }}>
+              {title}
+            </h4>
+            <p style={{ opacity: 0.75 }}>{text}</p>
           </div>
         ))}
       </section>
 
+      {/* TECH POSITIONING */}
       <section
         style={{
           padding: "100px 28px",
           textAlign: "center",
-          background:
-            "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0))",
         }}
       >
-        <h3 style={{ fontSize: "44px", fontWeight: 400, marginBottom: "28px" }}>
-          Created by Rev. Dr. Jessica Simmonds
+        <h3 style={{ fontSize: "40px", marginBottom: "24px" }}>
+          Built for immersive technology
         </h3>
 
         <p
           style={{
-            maxWidth: "920px",
+            maxWidth: "900px",
             margin: "0 auto",
-            fontSize: "19px",
-            lineHeight: "1.85",
-            color: "rgba(255,255,255,0.78)",
+            fontSize: "20px",
+            lineHeight: "1.9",
+            opacity: 0.85,
           }}
         >
-          Jessica is a visionary entrepreneur, published author, clinical
-          hypnotherapist, Spiritual Life Coach, neurodivergent thinker, wife,
-          mother of five, multimedia artist, singer, instructor, and public
-          speaker. She has believed for decades that we are spiritual beings
-          having a human experience.
+          EARTH SCHOOL begins in virtual reality and extends into augmented
+          reality, allowing the experience to move beyond the headset and into
+          everyday life.
+          <br /><br />
+          The goal is not escape.
           <br />
-          <br />
-          Through Aspire, Aspire PODS, Aspire Game Academy, EARTH SCHOOL, and
-          Aspire Global Foundation, she is building a connected ecosystem for
-          human potential, conscious leadership, creativity, and impact.
+          The goal is awareness within reality.
         </p>
       </section>
 
-      <section style={{ padding: "90px 28px 120px", textAlign: "center" }}>
+      {/* FINAL MESSAGE */}
+      <section
+        style={{
+          padding: "120px 28px",
+          textAlign: "center",
+        }}
+      >
         <p
           style={{
-            fontSize: "clamp(32px, 6vw, 78px)",
-            lineHeight: "1.1",
-            margin: 0,
-            textShadow: "0 0 30px rgba(255,255,255,0.22)",
+            fontSize: "clamp(36px, 6vw, 80px)",
+            lineHeight: "1.2",
+            textShadow: "0 0 30px rgba(255,255,255,0.2)",
           }}
         >
           You are not just playing.
