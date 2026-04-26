@@ -27,10 +27,19 @@ export default function Home() {
       <div className="rainLayer" />
       <div className="glassLayer" />
       <div className="starLayer" />
+      <div className="cityLayer" />
       <div className="glowOne" />
       <div className="glowTwo" />
 
-      <section className="hero">
+      <section className="hero" id="top">
+        <nav className="topNav" aria-label="Primary">
+          <a href="#top">Home</a>
+          <a href="#vision">Vision</a>
+          <a href="#diner">Neon Diner</a>
+          <a href="#systems">Systems</a>
+          <a href="#investor">Investor</a>
+          <a href="#founder">Founder</a>
+        </nav>
         <p className="micro">A perception-driven spatial computing experience</p>
 
         <p className="opening">Can you see your own face right now?</p>
@@ -54,7 +63,7 @@ export default function Home() {
         <div className="button">Enter The Experience</div>
       </section>
 
-      <section className="section bigIdea">
+      <section className="section bigIdea" id="vision">
         <p className="micro">The Big Vision</p>
         <h2>Your life is the gameplay</h2>
 
@@ -73,7 +82,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="diner">
+      <section className="diner" id="diner">
         <div className="dinerInner">
           <p className="micro">Vertical Slice One</p>
 
@@ -97,7 +106,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" id="systems">
         <p className="micro">The Awareness System</p>
         <h2>Pause. Reset. Choose differently.</h2>
 
@@ -184,7 +193,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="cardsSection investor">
+      <section className="cardsSection investor" id="investor">
         <p className="micro">Investor and Partner Layer</p>
         <h2>A new category of experience</h2>
 
@@ -204,7 +213,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section founder">
+      <section className="section founder" id="founder">
         <p className="micro">Created by</p>
         <h2>Rev. Dr. Jessica Simmonds</h2>
 
@@ -243,9 +252,9 @@ export default function Home() {
           position: relative;
           overflow-x: hidden;
           background:
-            radial-gradient(circle at 20% 10%, rgba(255, 0, 180, 0.26), transparent 34%),
-            radial-gradient(circle at 85% 18%, rgba(0, 255, 225, 0.24), transparent 36%),
-            radial-gradient(circle at 50% 70%, rgba(145, 95, 255, 0.2), transparent 40%),
+            radial-gradient(circle at 20% 10%, rgba(255, 0, 180, 0.32), transparent 34%),
+            radial-gradient(circle at 85% 18%, rgba(0, 255, 225, 0.3), transparent 36%),
+            radial-gradient(circle at 50% 70%, rgba(145, 95, 255, 0.26), transparent 40%),
             linear-gradient(180deg, #080015 0%, #04000f 35%, #020008 100%);
         }
 
@@ -265,9 +274,9 @@ export default function Home() {
           inset: 0;
           z-index: 1;
           background:
-            radial-gradient(circle at 50% 20%, rgba(190,120,255,0.28), transparent 28%),
-            radial-gradient(circle at 15% 65%, rgba(255,0,185,0.2), transparent 36%),
-            radial-gradient(circle at 85% 40%, rgba(0,255,225,0.22), transparent 34%),
+            radial-gradient(circle at 50% 20%, rgba(190,120,255,0.34), transparent 28%),
+            radial-gradient(circle at 15% 65%, rgba(255,0,185,0.25), transparent 36%),
+            radial-gradient(circle at 85% 40%, rgba(0,255,225,0.28), transparent 34%),
             linear-gradient(180deg, rgba(5,0,20,0.42), rgba(0,0,0,0.92));
           mix-blend-mode: screen;
           pointer-events: none;
@@ -282,15 +291,15 @@ export default function Home() {
           background-image:
             repeating-linear-gradient(
               104deg,
-              rgba(185, 230, 255, 0.32) 0 1px,
-              transparent 1px 14px
+              rgba(185, 230, 255, 0.34) 0 1px,
+              transparent 1px 15px
             ),
             repeating-linear-gradient(
               104deg,
-              rgba(255, 120, 240, 0.14) 0 1px,
-              transparent 1px 18px
+              rgba(255, 120, 240, 0.18) 0 1px,
+              transparent 1px 20px
             );
-          animation: rainfall 14s linear infinite;
+          animation: rainfall 18s linear infinite;
         }
 
         .glassLayer {
@@ -318,6 +327,41 @@ export default function Home() {
           background-position: 0 0, 40px 70px;
           opacity: 0.32;
           animation: drift 50s linear infinite, twinkle 8s ease-in-out infinite alternate;
+        }
+
+        .cityLayer {
+          position: fixed;
+          inset: auto 0 0;
+          height: 36vh;
+          z-index: 2;
+          pointer-events: none;
+          opacity: 0.3;
+          background:
+            linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.58) 65%, rgba(0,0,0,0.9) 100%),
+            repeating-linear-gradient(
+              to right,
+              rgba(138, 96, 255, 0.4) 0 2px,
+              transparent 2px 72px
+            ),
+            linear-gradient(
+              to right,
+              rgba(0,255,225,0.2) 2% 9%,
+              transparent 9% 14%,
+              rgba(255,0,180,0.23) 14% 20%,
+              transparent 20% 27%,
+              rgba(121, 100, 255, 0.3) 27% 35%,
+              transparent 35% 42%,
+              rgba(0,255,225,0.2) 42% 48%,
+              transparent 48% 56%,
+              rgba(255,0,180,0.24) 56% 62%,
+              transparent 62% 72%,
+              rgba(170,110,255,0.28) 72% 80%,
+              transparent 80% 88%,
+              rgba(0,255,225,0.2) 88% 96%,
+              transparent 96% 100%
+            );
+          clip-path: polygon(0 100%,0 74%,5% 74%,5% 60%,10% 60%,10% 72%,15% 72%,15% 52%,21% 52%,21% 74%,26% 74%,26% 61%,31% 61%,31% 76%,36% 76%,36% 54%,43% 54%,43% 74%,49% 74%,49% 66%,56% 66%,56% 78%,61% 78%,61% 58%,67% 58%,67% 73%,73% 73%,73% 52%,78% 52%,78% 75%,85% 75%,85% 60%,91% 60%,91% 76%,100% 76%,100% 100%);
+          filter: drop-shadow(0 -8px 24px rgba(255, 0, 180, 0.22));
         }
 
         .glowOne {
@@ -381,6 +425,33 @@ export default function Home() {
           padding: 42px 24px;
         }
 
+        .topNav {
+          width: min(1100px, 100%);
+          margin: 0 auto 42px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 14px;
+          flex-wrap: wrap;
+          padding: 10px 16px;
+          border-radius: 999px;
+          border: 1px solid rgba(255,255,255,0.2);
+          background: rgba(10, 0, 28, 0.35);
+          backdrop-filter: blur(10px);
+          box-shadow: 0 0 24px rgba(190,120,255,0.24);
+        }
+
+        .topNav a {
+          color: #f7efff;
+          text-decoration: none;
+          font-size: 14px;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          padding: 6px 8px;
+          opacity: 0.92;
+          white-space: nowrap;
+        }
+
         .micro {
           letter-spacing: 4px;
           text-transform: uppercase;
@@ -400,7 +471,7 @@ export default function Home() {
         }
 
         .intro {
-          max-width: 920px;
+          max-width: 860px;
           font-size: 21px;
           line-height: 1.85;
           opacity: 0.88;
@@ -426,7 +497,7 @@ export default function Home() {
 
         .gameLine {
           margin: -8px 0 12px;
-          font-size: clamp(28px, 3.8vw, 52px);
+          font-size: clamp(20px, 2.8vw, 40px);
           letter-spacing: 0.42em;
           text-transform: uppercase;
           color: #98fff2;
@@ -453,7 +524,7 @@ export default function Home() {
         }
 
         .section {
-          padding: 120px 28px;
+          padding: 110px 28px;
           text-align: center;
           display: flex;
           flex-direction: column;
@@ -461,7 +532,7 @@ export default function Home() {
         }
 
         .section p {
-          max-width: 940px;
+          max-width: 860px;
           font-size: 21px;
           line-height: 1.88;
           opacity: 0.86;
@@ -497,7 +568,7 @@ export default function Home() {
         }
 
         .dinerInner {
-          max-width: 980px;
+          width: min(980px, 100%);
           border-radius: 34px;
           padding: 56px 34px;
           background: rgba(0,0,0,0.28);
@@ -507,8 +578,10 @@ export default function Home() {
         }
 
         .dinerImage {
-          width: min(100%, 900px);
+          width: 100%;
+          max-width: 900px;
           height: auto;
+          object-fit: cover;
           margin: 10px auto 30px;
           display: block;
           border-radius: 22px;
@@ -527,7 +600,7 @@ export default function Home() {
         }
 
         .cardsSection {
-          padding: 120px 28px;
+          padding: 110px 28px;
           text-align: center;
         }
 
@@ -541,7 +614,7 @@ export default function Home() {
 
         .cards {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 22px;
           max-width: 1120px;
           margin: 46px auto 0;
@@ -567,7 +640,7 @@ export default function Home() {
         }
 
         .teaser {
-          padding: 120px 28px;
+          padding: 110px 28px;
           text-align: center;
         }
 
@@ -625,18 +698,134 @@ export default function Home() {
           text-shadow: 0 0 48px rgba(190,120,255,0.55);
         }
 
-        @media (max-width: 700px) {
-          .hero, .section, .cardsSection, .teaser, .final {
-            padding-left: 20px;
-            padding-right: 20px;
+        @media (max-width: 900px) {
+          .hero, .section, .cardsSection, .teaser, .final, .diner {
+            padding-left: 22px;
+            padding-right: 22px;
           }
 
-          .intro, .section p, .diner p, .teaserBox p {
+          h1 {
+            font-size: clamp(56px, 11vw, 110px);
+            margin-top: 28px;
+          }
+
+          h2 {
+            font-size: clamp(32px, 5.5vw, 60px);
+          }
+
+          .intro, .section p, .diner p, .cardsSection .wide, .teaserBox p {
+            font-size: 19px;
+            line-height: 1.75;
+          }
+
+          .cards {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+          }
+
+          .dinerInner {
+            padding: 44px 24px;
+          }
+
+          .teaserBox {
+            padding: 38px 24px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .hero, .section, .cardsSection, .teaser, .final {
+            padding-left: 16px;
+            padding-right: 16px;
+          }
+
+          .diner {
+            padding-left: 16px;
+            padding-right: 16px;
+            min-height: auto;
+          }
+
+          .topNav {
+            gap: 6px 8px;
+            padding: 8px 10px;
+            border-radius: 18px;
+            margin-bottom: 26px;
+          }
+
+          .topNav a {
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            padding: 4px 6px;
+          }
+
+          .micro {
+            font-size: 11px;
+            letter-spacing: 2.4px;
+            margin-bottom: 14px;
+          }
+
+          .opening {
             font-size: 18px;
           }
 
+          h1 {
+            font-size: clamp(42px, 14vw, 68px);
+            line-height: 0.95;
+            margin: 20px 0 10px;
+          }
+
+          h2 {
+            font-size: clamp(24px, 8vw, 38px);
+            margin-bottom: 16px;
+          }
+
+          .gameLine {
+            font-size: clamp(16px, 4.5vw, 22px);
+            letter-spacing: 0.28em;
+            margin-top: -2px;
+          }
+
+          .intro, .section p, .diner p, .cardsSection .wide, .teaserBox p, .final p {
+            font-size: 17px;
+            line-height: 1.66;
+          }
+
+          .section, .cardsSection, .teaser {
+            padding-top: 76px;
+            padding-bottom: 76px;
+          }
+
+          .final {
+            min-height: 70vh;
+            padding-top: 88px;
+            padding-bottom: 88px;
+          }
+
+          .cards {
+            grid-template-columns: 1fr;
+            gap: 14px;
+          }
+
           .card {
-            padding: 24px;
+            padding: 20px;
+            border-radius: 20px;
+          }
+
+          .dinerInner {
+            padding: 24px 14px;
+            border-radius: 20px;
+          }
+
+          .dinerImage {
+            border-radius: 16px;
+            margin-bottom: 20px;
+          }
+
+          .button {
+            width: 100%;
+            max-width: 320px;
+            margin-top: 32px;
+            padding: 14px 20px;
+            text-align: center;
           }
         }
       `}</style>
