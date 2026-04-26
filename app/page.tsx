@@ -24,6 +24,8 @@ export default function Home() {
       </video>
 
       <div className="videoOverlay" />
+      <div className="rainLayer" />
+      <div className="glassLayer" />
       <div className="starLayer" />
       <div className="glowOne" />
       <div className="glowTwo" />
@@ -41,6 +43,7 @@ export default function Home() {
         <h1>EARTH SCHOOL</h1>
 
         <h2>A Temporary Human Experience</h2>
+        <p className="gameLine">THE GAME</p>
 
         <p className="intro">
           What if this is a 3D simulation?
@@ -75,6 +78,11 @@ export default function Home() {
           <p className="micro">Vertical Slice One</p>
 
           <h2>THE NEON DINER</h2>
+          <img
+            className="dinerImage"
+            src="/diner.png"
+            alt="Retro neon diner at night in the rain"
+          />
 
           <p>
             A rainy night. A glowing retro diner. A moment that repeats until you notice it.
@@ -160,9 +168,10 @@ export default function Home() {
         <h2>Built with real production pathways</h2>
 
         <p>
-          EARTH SCHOOL is being developed as an Unreal Engine vertical slice using
-          realistic environments, MetaHuman-style character interaction, loop-based
-          awareness progression, and immersive audio design.
+          EARTH SCHOOL is currently being developed as an Unreal Engine vertical slice,
+          beginning with the Neon Diner experience and expanding through realistic
+          environments, MetaHuman-style character interaction, loop-based awareness
+          progression, and immersive audio design.
         </p>
 
         <p>
@@ -234,8 +243,10 @@ export default function Home() {
           position: relative;
           overflow-x: hidden;
           background:
-            radial-gradient(circle at 50% 20%, rgba(190,120,255,0.35), transparent 30%),
-            linear-gradient(180deg, #080015, #000);
+            radial-gradient(circle at 20% 10%, rgba(255, 0, 180, 0.26), transparent 34%),
+            radial-gradient(circle at 85% 18%, rgba(0, 255, 225, 0.24), transparent 36%),
+            radial-gradient(circle at 50% 70%, rgba(145, 95, 255, 0.2), transparent 40%),
+            linear-gradient(180deg, #080015 0%, #04000f 35%, #020008 100%);
         }
 
         .bgVideo {
@@ -246,7 +257,7 @@ export default function Home() {
           object-fit: cover;
           z-index: 0;
           opacity: 0.55;
-          filter: saturate(1.3) contrast(1.08) brightness(0.78);
+          filter: saturate(1.38) contrast(1.12) brightness(0.68);
         }
 
         .videoOverlay {
@@ -255,9 +266,43 @@ export default function Home() {
           z-index: 1;
           background:
             radial-gradient(circle at 50% 20%, rgba(190,120,255,0.28), transparent 28%),
-            radial-gradient(circle at 20% 70%, rgba(255,160,120,0.16), transparent 34%),
-            radial-gradient(circle at 80% 50%, rgba(0,255,210,0.14), transparent 36%),
-            linear-gradient(180deg, rgba(0,0,0,0.36), rgba(0,0,0,0.9));
+            radial-gradient(circle at 15% 65%, rgba(255,0,185,0.2), transparent 36%),
+            radial-gradient(circle at 85% 40%, rgba(0,255,225,0.22), transparent 34%),
+            linear-gradient(180deg, rgba(5,0,20,0.42), rgba(0,0,0,0.92));
+          mix-blend-mode: screen;
+          pointer-events: none;
+        }
+
+        .rainLayer {
+          position: fixed;
+          inset: -15% 0;
+          z-index: 2;
+          pointer-events: none;
+          opacity: 0.25;
+          background-image:
+            repeating-linear-gradient(
+              104deg,
+              rgba(185, 230, 255, 0.32) 0 1px,
+              transparent 1px 14px
+            ),
+            repeating-linear-gradient(
+              104deg,
+              rgba(255, 120, 240, 0.14) 0 1px,
+              transparent 1px 18px
+            );
+          animation: rainfall 14s linear infinite;
+        }
+
+        .glassLayer {
+          position: fixed;
+          inset: 0;
+          z-index: 2;
+          pointer-events: none;
+          background:
+            radial-gradient(circle at 30% 20%, rgba(255,255,255,0.08), transparent 40%),
+            radial-gradient(circle at 70% 80%, rgba(255,255,255,0.06), transparent 42%),
+            linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.45));
+          backdrop-filter: blur(2px);
           pointer-events: none;
         }
 
@@ -271,8 +316,8 @@ export default function Home() {
             radial-gradient(rgba(255,255,255,0.55) 1px, transparent 1px);
           background-size: 90px 90px, 150px 150px;
           background-position: 0 0, 40px 70px;
-          opacity: 0.26;
-          animation: drift 50s linear infinite;
+          opacity: 0.32;
+          animation: drift 50s linear infinite, twinkle 8s ease-in-out infinite alternate;
         }
 
         .glowOne {
@@ -285,6 +330,7 @@ export default function Home() {
           pointer-events: none;
           background: radial-gradient(circle, rgba(255,0,180,0.18), transparent 60%);
           filter: blur(80px);
+          animation: pulse 10s ease-in-out infinite;
         }
 
         .glowTwo {
@@ -297,11 +343,27 @@ export default function Home() {
           pointer-events: none;
           background: radial-gradient(circle, rgba(0,255,210,0.18), transparent 60%);
           filter: blur(90px);
+          animation: pulse 12s ease-in-out infinite reverse;
         }
 
         @keyframes drift {
           from { transform: translateY(0); }
           to { transform: translateY(-180px); }
+        }
+
+        @keyframes twinkle {
+          from { opacity: 0.24; }
+          to { opacity: 0.38; }
+        }
+
+        @keyframes rainfall {
+          from { transform: translateY(-8%); }
+          to { transform: translateY(8%); }
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 0.75; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.08); }
         }
 
         section {
@@ -360,6 +422,17 @@ export default function Home() {
           margin: 0 0 28px;
           text-align: center;
           text-shadow: 0 0 45px rgba(190,120,255,0.5);
+        }
+
+        .gameLine {
+          margin: -8px 0 12px;
+          font-size: clamp(28px, 3.8vw, 52px);
+          letter-spacing: 0.42em;
+          text-transform: uppercase;
+          color: #98fff2;
+          text-shadow:
+            0 0 14px rgba(0,255,225,0.7),
+            0 0 28px rgba(255,0,180,0.52);
         }
 
         h3 {
@@ -431,6 +504,19 @@ export default function Home() {
           border: 1px solid rgba(255,255,255,0.14);
           box-shadow: 0 0 70px rgba(0,255,210,0.18);
           backdrop-filter: blur(12px);
+        }
+
+        .dinerImage {
+          width: min(100%, 900px);
+          height: auto;
+          margin: 10px auto 30px;
+          display: block;
+          border-radius: 22px;
+          border: 1px solid rgba(180, 255, 248, 0.52);
+          box-shadow:
+            0 0 24px rgba(0,255,225,0.42),
+            0 0 36px rgba(255,0,185,0.28),
+            inset 0 0 30px rgba(255,255,255,0.08);
         }
 
         .diner p {
