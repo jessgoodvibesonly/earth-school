@@ -33,17 +33,12 @@ export default function Home() {
       <section className="hero">
         <p className="micro">A perception-driven spatial computing experience</p>
 
-        <p className="opening">Can you see your own face right now?</p>
-        <p className="soft">Strange, isn’t it?</p>
-
-        <p className="intro">
-          You’re here, inside a body, moving through a world that feels completely real.
-        </p>
-
         <h1>EARTH SCHOOL</h1>
 
         <h2>A Temporary Human Experience</h2>
         <p className="gameLine">THE GAME</p>
+
+        <p className="gameLabel">THE GAME</p>
 
         <p className="intro">
           What if this is a 3D simulation?
@@ -51,6 +46,38 @@ export default function Home() {
           Where <strong>The Sims meets Grand Theft Auto with a soul.</strong>
         </p>
 
+      </section>
+
+      <section className="section spatial">
+        <p className="micro">Designed for Spatial Computing</p>
+        <h2>Presence first. Reality second.</h2>
+
+        <p>
+          EARTH SCHOOL is being developed as a perception-driven experience designed
+          for VR and extended into AR.
+        </p>
+
+        <p>
+          Built as an immersive wellbeing system, it combines presence, awareness,
+          and interaction to explore how perception shapes reality.
+        </p>
+
+        <p>
+          Beginning as a vertical slice in Unreal Engine, the experience is designed
+          to evolve into a real-world companion layer through AR and wearable devices.
+        </p>
+
+        <p className="statusLine">
+          Currently in development as an Unreal Engine vertical slice, beginning with
+          the Neon Diner experience.
+        </p>
+
+        <ul className="spatialBullets">
+          <li>Designed for VR immersion (Meta Quest)</li>
+          <li>Extends into AR for real-world interaction (glasses)</li>
+          <li>Focused on wellbeing, awareness, and reflection</li>
+          <li>Prototype in development as an Unreal Engine vertical slice</li>
+        </ul>
       </section>
 
       <section className="section bigIdea">
@@ -73,6 +100,7 @@ export default function Home() {
       </section>
 
       <section className="diner">
+        <img className="dinerImage" src="/diner.png" alt="The Neon Diner cinematic concept" />
         <div className="dinerInner">
           <p className="micro">Vertical Slice One</p>
 
@@ -139,27 +167,6 @@ export default function Home() {
           It begins in VR and extends into AR, supporting real-world connection beyond
           the headset through companion prompts and awareness-based interaction.
         </p>
-      </section>
-
-      <section className="teaser">
-        <p className="micro">Short Teaser</p>
-        <h2>Welcome to Earth School</h2>
-
-        <div className="teaserBox">
-          <p>
-            Can you see your own face right now?
-            <br />
-            You are inside a body, moving through a world that feels real.
-            <br />
-            But what if this is a 3D simulation?
-          </p>
-
-          <p>
-            Welcome to EARTH SCHOOL.
-            <br />
-            A temporary human experience.
-          </p>
-        </div>
       </section>
 
       <section className="section">
@@ -405,6 +412,20 @@ export default function Home() {
           opacity: 0.88;
         }
 
+        .gameLabel {
+          margin: 0 0 20px;
+          letter-spacing: 5px;
+          text-transform: uppercase;
+          font-size: 15px;
+          opacity: 0.82;
+          color: #f2dcff;
+          padding: 8px 16px;
+          border: 1px solid rgba(255,255,255,0.28);
+          border-radius: 999px;
+          background: rgba(255,255,255,0.05);
+          box-shadow: 0 0 24px rgba(190,120,255,0.28);
+        }
+
         h1 {
           font-size: clamp(68px, 12vw, 170px);
           line-height: 0.88;
@@ -470,6 +491,42 @@ export default function Home() {
           background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0));
         }
 
+        .spatial {
+          padding-top: 86px;
+        }
+
+        .statusLine {
+          margin-top: 8px;
+          font-size: 22px !important;
+          color: #f2dcff;
+          opacity: 0.95 !important;
+        }
+
+        .spatialBullets {
+          margin: 24px 0 0;
+          padding: 0;
+          list-style: none;
+          max-width: 880px;
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 14px;
+          text-align: left;
+        }
+
+        .spatialBullets li {
+          border: 1px solid rgba(255,255,255,0.16);
+          border-radius: 18px;
+          background: rgba(255,255,255,0.07);
+          box-shadow:
+            0 0 28px rgba(190,120,255,0.18),
+            inset 0 0 16px rgba(255,255,255,0.03);
+          padding: 14px 16px;
+          font-size: 17px;
+          line-height: 1.5;
+          opacity: 0.9;
+        }
+
         .quote {
           font-size: 28px !important;
           opacity: 1 !important;
@@ -481,6 +538,8 @@ export default function Home() {
           min-height: 100vh;
           padding: 80px 28px;
           display: flex;
+          flex-direction: column;
+          gap: 28px;
           align-items: center;
           justify-content: center;
           text-align: center;
@@ -493,6 +552,18 @@ export default function Home() {
           box-shadow:
             inset 0 0 120px rgba(0,255,210,0.12),
             inset 0 0 180px rgba(190,120,255,0.12);
+        }
+
+        .dinerImage {
+          width: min(1180px, 100%);
+          max-height: 56vh;
+          object-fit: cover;
+          border-radius: 28px;
+          border: 1px solid rgba(255,255,255,0.25);
+          box-shadow:
+            0 0 36px rgba(0,255,210,0.25),
+            0 0 52px rgba(255,0,180,0.2),
+            inset 0 0 30px rgba(255,255,255,0.12);
         }
 
         .dinerInner {
@@ -565,28 +636,6 @@ export default function Home() {
           line-height: 1.65;
         }
 
-        .teaser {
-          padding: 120px 28px;
-          text-align: center;
-        }
-
-        .teaserBox {
-          max-width: 900px;
-          margin: 40px auto 0;
-          border-radius: 30px;
-          padding: 46px 32px;
-          border: 1px solid rgba(255,255,255,0.16);
-          background: rgba(255,255,255,0.075);
-          box-shadow: 0 0 55px rgba(190,120,255,0.22);
-          backdrop-filter: blur(12px);
-        }
-
-        .teaserBox p {
-          font-size: 23px;
-          line-height: 1.82;
-          opacity: 0.9;
-        }
-
         .investor {
           background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0));
         }
@@ -625,13 +674,21 @@ export default function Home() {
         }
 
         @media (max-width: 700px) {
-          .hero, .section, .cardsSection, .teaser, .final {
+          .hero, .section, .cardsSection, .final {
             padding-left: 20px;
             padding-right: 20px;
           }
 
-          .intro, .section p, .diner p, .teaserBox p {
+          .intro, .section p, .diner p {
             font-size: 18px;
+          }
+
+          .statusLine {
+            font-size: 20px !important;
+          }
+
+          .dinerImage {
+            max-height: 42vh;
           }
 
           .card {
