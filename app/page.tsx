@@ -365,7 +365,6 @@ export default function Home() {
           model combining compassion and technology.
         </p>
 
-        <p><a className="bioLink" href="https://jessgoodvibesonly.vercel.app" target="_blank" rel="noreferrer">Meet Jessica Simmonds</a></p>
       </section>
 
       <section className="section bottomCta">
