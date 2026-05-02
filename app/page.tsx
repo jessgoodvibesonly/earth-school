@@ -16,6 +16,17 @@ export default function Home() {
     ["Wellbeing Market", "Awareness, presence, reflection, nervous system regulation, and guided state-shifting."],
     ["Partnership Ask", "Developer support, strategic partnership, prototype funding, and incubation."],
   ];
+  const filterLens = ["Thoughts", "Emotions", "Beliefs", "Memory", "Attention", "Nervous system state", "Awareness"];
+  const filterEffects = ["Lighting", "Sound", "Dialogue", "NPC behavior", "Environment", "Available paths", "Emotional tone"];
+  const mechanicsCards = [
+    ["Filter System", "Perception shapes experience"],
+    ["Awareness System", "Noticing reveals more"],
+    ["Neural Pathways", "Repetition builds identity"],
+    ["State System", "Your state changes what is possible"],
+    ["Mirror NPC System", "Characters reflect you"],
+    ["Loop System", "Patterns repeat until seen"],
+    ["Glasses Interface", "Reveals hidden layers and choices"],
+  ];
 
   return (
     <main className="earth">
@@ -122,6 +133,110 @@ export default function Home() {
               <p>{text}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="rules section">
+        <p className="micro">EARTH SCHOOL: THE RULES OF THE GAME</p>
+        <h2>THE RULES OF THE GAME</h2>
+        <p className="quoteSoft">A temporary human experience where awareness changes the way reality is perceived.</p>
+
+        <div className="ruleBlock">
+          <h3>1. CORE CONCEPT</h3>
+          <p>EARTH SCHOOL is a consciousness-driven video game where the objective is awareness.</p>
+          <p>The player begins inside an ordinary world. As they notice more, reflect more, and choose differently, the world responds.</p>
+          <p>This is not a game about changing the environment. It is about changing the filter through which the environment is experienced.</p>
+          <p className="ruleLine">Change the filter. Change the experience.</p>
+          <p className="quoteSoft"><em>“We see the world not as it is, but as we are.” — Anaïs Nin</em></p>
+        </div>
+
+        <div className="ruleBlock">
+          <h3>2. JOHN AND MRS. CHEN</h3>
+          <p>John is the player character: older, bearded, calm, grounded, and wise-looking. But he is the one waking up.</p>
+          <p>Mrs. Chen is an older Chinese woman in the diner: practical, calm, lightly humorous, and deeply perceptive. She is not a guide. She is a mirror.</p>
+          <p>John notices something unusual. Because he notices, Mrs. Chen passes him a pair of glasses. He puts them on and sees a hidden interface over reality: choices, filters, awareness.</p>
+          <p>Outside, rain freezes on the glass and shifts into a bright, glowing sunset. Reality did not change. His perception did.</p>
+          <p className="quoteSoft"><em>“You take the red pill… you stay in Wonderland.” — The Matrix</em></p>
+        </div>
+
+        <div className="ruleGrid">
+          <div className="card">
+            <h3>3. THE FILTER SYSTEM</h3>
+            <p>The player is not seeing reality directly. They are seeing reality through a filter.</p>
+            <ul>{filterLens.map((item) => <li key={item}>{item}</li>)}</ul>
+            <p>The filter changes:</p>
+            <ul>{filterEffects.map((item) => <li key={item}>{item}</li>)}</ul>
+            <p><strong>Same moment. Different filter. Different reality.</strong></p>
+            <p>Low awareness → NPC feels rude. Medium awareness → NPC feels neutral. High awareness → deeper meaning is revealed.</p>
+            <p className="quoteSoft"><em>“Reality is that which, when you stop believing in it, doesn’t go away.” — Philip K. Dick</em></p>
+          </div>
+          <div className="card">
+            <h3>4. THE UNIVERSE HAS RULES</h3>
+            <p>Physics shapes the structure of reality. Consciousness shapes the experience of reality.</p>
+            <p><strong>Scientific laws:</strong> Gravity, Energy, Cause and effect, Entropy, Relativity, Quantum probability.</p>
+            <p><strong>Experiential laws:</strong> Cause and effect, Vibration, Attraction, Polarity, Rhythm, Correspondence, Perception.</p>
+            <p className="ruleLine">EARTH SCHOOL exists at the intersection of structure and perception.</p>
+            <p className="quoteSoft"><em>“As within, so without.”</em></p>
+          </div>
+        </div>
+
+        <div className="ruleBlock">
+          <h3>5. THE BRAIN HAS RULES TOO</h3>
+          <div className="cards">
+            <div className="card"><h3>Mirror Neurons</h3><p>We absorb behavior through observation.</p></div>
+            <div className="card"><h3>Neuroplasticity</h3><p>Repeated choices build pathways.</p></div>
+            <div className="card"><h3>Reticular Activating System</h3><p>We see more of what we focus on.</p></div>
+            <div className="card"><h3>Nervous System</h3><p>State changes perception and reaction.</p></div>
+            <div className="card"><h3>Dopamine</h3><p>Drives seeking, not fulfillment.</p></div>
+            <div className="card"><h3>Default Mode Network</h3><p>Creates the story we live inside.</p></div>
+          </div>
+          <p className="ruleLine">The brain is not just observing the game. The brain is part of the game.</p>
+          <p className="quoteSoft"><em>“Neurons that fire together wire together.” — Donald Hebb</em></p>
+        </div>
+
+        <div className="ruleBlock">
+          <h3>6. GAMEPLAY LOOP</h3>
+          <div className="loopTrack">
+            {["Experience", "Reaction", "Reflection", "Awareness", "New Choice", "New Reality"].map((step) => <span key={step}>{step}</span>)}
+          </div>
+          <p>The player repeats scenarios. Each time, they can see more, choose differently, and become more aware. Loops are not punishment. Loops are lessons.</p>
+          <p className="quoteSoft"><em>“The definition of insanity is doing the same thing over and over and expecting different results.” — commonly attributed to Einstein</em></p>
+        </div>
+
+        <div className="ruleBlock">
+          <h3>7. CORE GAME MECHANICS</h3>
+          <div className="cards">
+            {mechanicsCards.map(([title, text]) => (
+              <div className="card" key={title}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            ))}
+          </div>
+          <p className="quoteSoft"><em>“Where attention goes, energy flows.”</em></p>
+        </div>
+
+        <div className="ruleBlock">
+          <h3>8. VISUAL DIAGRAM</h3>
+          <div className="diagram">
+            <div className="ring outer">PERCEIVED REALITY<br />Environment · NPCs · Events · Opportunities · Dialogue · Reality layers</div>
+            <div className="ring inner">THE FILTER<br />Thoughts · Emotions · Beliefs · Memory · State · Attention</div>
+            <div className="ring core">Player / Consciousness</div>
+          </div>
+          <p className="diagramFlow">Filter → Reality → Experience → Learning → Filter</p>
+          <p className="ruleLine">Change the filter. Change the experience.</p>
+        </div>
+
+        <div className="ruleBlock">
+          <h3>9. POSITIONING</h3>
+          <p>Most games change the world around the player. EARTH SCHOOL changes how the player perceives the world. That is the game.</p>
+          <p className="quoteSoft"><em>“The kingdom of heaven is within you.”</em></p>
+        </div>
+
+        <div className="ruleBlock">
+          <h3>10. FINAL CLOSE</h3>
+          <p className="finalClose">EARTH SCHOOL<br />A temporary human experience.<br />THE GAME.</p>
+          <p className="quoteSoft"><em>“What you seek is seeking you.” — Rumi</em></p>
         </div>
       </section>
 
@@ -564,6 +679,35 @@ export default function Home() {
           opacity: 0.76;
           line-height: 1.65;
         }
+
+        .rules {
+          gap: 34px;
+          background: linear-gradient(180deg, rgba(4, 0, 20, 0.7), rgba(0, 0, 0, 0.2));
+        }
+
+        .ruleBlock {
+          width: min(1080px, 100%);
+          border: 1px solid rgba(160, 255, 246, 0.18);
+          border-radius: 28px;
+          padding: 34px;
+          background: rgba(10, 5, 30, 0.42);
+          box-shadow: 0 0 45px rgba(0, 255, 225, 0.12), inset 0 0 24px rgba(255, 255, 255, 0.04);
+          text-align: left;
+        }
+
+        .quoteSoft { opacity: 0.66 !important; font-style: italic; }
+        .ruleLine { font-size: 30px !important; color: #98fff2; text-shadow: 0 0 24px rgba(0,255,225,0.48); }
+        .ruleGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; width: min(1080px, 100%); }
+        .ruleBlock ul { margin: 10px 0 14px 20px; line-height: 1.7; opacity: 0.85; }
+        .loopTrack { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+        .loopTrack span { padding: 10px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.06); }
+        .diagram { position: relative; width: min(580px, 90vw); aspect-ratio: 1 / 1; margin: 20px auto; }
+        .ring { position: absolute; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; line-height: 1.45; }
+        .outer { inset: 0; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.03); font-size: 15px; }
+        .inner { inset: 14%; border: 1px solid rgba(0,255,225,0.55); background: rgba(0,255,225,0.09); font-size: 14px; }
+        .core { inset: 34%; border: 1px solid rgba(255,0,180,0.58); background: rgba(255,0,180,0.12); font-weight: bold; }
+        .diagramFlow { text-align: center; opacity: 0.8 !important; letter-spacing: 0.04em; }
+        .finalClose { font-size: clamp(28px, 4vw, 48px) !important; text-align: center; line-height: 1.45 !important; }
 
         .teaser {
           padding: 120px 28px;
