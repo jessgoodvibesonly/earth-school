@@ -6,12 +6,12 @@ export default function Home() {
     ["Hypnotherapy-Informed Moments", "Guided pause points, breath cues, and reset moments help the player choose differently."],
     ["Binaural Audio Layer", "Optional binaural audio experiences and subtle frequency-inspired soundscapes support immersion and presence."],
     ["AI Companion System", "An adaptive companion can reflect patterns, support awareness, and respond to player behavior over time."],
-    ["MetaHuman Characters", "Realistic characters create emotionally grounded interactions inside the vertical slice."],
+    ["MetaHuman Characters", "Realistic characters create emotionally grounded interactions inside the cinematic proof of concept."],
     ["VR to AR Expansion", "The experience begins in VR and expands into AR, glasses, and real-world awareness prompts."],
   ];
 
   const investorCards = [
-    ["Prototype", "Unreal Engine vertical slice beginning with the retro neon diner experience."],
+    ["Prototype", "Pre-rendered cinematic proof of concept beginning with the retro neon diner experience."],
     ["Platform Fit", "Meta Quest, spatial computing, Ray-Ban Meta glasses, and future AR layers."],
     ["Wellbeing Market", "Awareness, presence, reflection, nervous system regulation, and guided state-shifting."],
     ["Partnership Ask", "Developer support, strategic partnership, prototype funding, and incubation."],
@@ -62,6 +62,7 @@ export default function Home() {
           Where <strong>The Sims meets Grand Theft Auto with a soul.</strong>
         </p>
 
+        <a className="ctaButton" href="https://calendly.com" target="_blank" rel="noreferrer">Book a Synergy Call</a>
       </section>
 
       <section className="section bigIdea">
@@ -85,7 +86,7 @@ export default function Home() {
 
       <section className="diner">
         <div className="dinerInner">
-          <p className="micro">Vertical Slice One</p>
+          <p className="micro">PRE-RENDERED CINEMATIC TO COME</p>
 
           <h2>THE NEON DINER</h2>
           <img
@@ -218,11 +219,31 @@ export default function Home() {
 
         <div className="ruleBlock">
           <h3>8. VISUAL DIAGRAM</h3>
-          <div className="diagram">
-            <div className="ring outer">PERCEIVED REALITY<br />Environment · NPCs · Events · Opportunities · Dialogue · Reality layers</div>
-            <div className="ring inner">THE FILTER<br />Thoughts · Emotions · Beliefs · Memory · State · Attention</div>
+          <div className="diagramDesktop" aria-hidden="true">
+            <div className="ring outer" />
+            <div className="ring inner" />
             <div className="ring core">Player / Consciousness</div>
+            <div className="ringTitle innerTitle">The Filter</div>
+            <div className="ringTitle outerTitle">Perceived Reality</div>
           </div>
+
+          <div className="diagramLabels desktopOnly">
+            <div className="labelGroup">
+              <h4>Inner Ring</h4>
+              <p>Thoughts · Emotions · Beliefs · Memory · State · Attention</p>
+            </div>
+            <div className="labelGroup">
+              <h4>Outer Ring</h4>
+              <p>Environment · NPCs · Events · Opportunities · Dialogue · Reality Layers</p>
+            </div>
+          </div>
+
+          <div className="diagramMobile">
+            <div className="card"><h4>Center</h4><p>Player / Consciousness</p></div>
+            <div className="card"><h4>Inner Ring · The Filter</h4><p>Thoughts · Emotions · Beliefs · Memory · State · Attention</p></div>
+            <div className="card"><h4>Outer Ring · Perceived Reality</h4><p>Environment · NPCs · Events · Opportunities · Dialogue · Reality Layers</p></div>
+          </div>
+
           <p className="diagramFlow">Filter → Reality → Experience → Learning → Filter</p>
           <p className="ruleLine">Change the filter. Change the experience.</p>
         </div>
@@ -282,10 +303,7 @@ export default function Home() {
         <h2>Built with real production pathways</h2>
 
         <p>
-          EARTH SCHOOL is currently being developed as an Unreal Engine vertical slice,
-          beginning with the Neon Diner experience and expanding through realistic
-          environments, MetaHuman-style character interaction, loop-based awareness
-          progression, and immersive audio design.
+          EARTH SCHOOL is currently being developed toward a pre-rendered cinematic proof of concept, beginning with The Neon Diner experience and expanding through realistic environments, MetaHuman-style character interaction, loop-based awareness progression, and immersive audio design.
         </p>
 
         <p>
@@ -339,6 +357,12 @@ export default function Home() {
           Through Aspire Global Foundation, she is developing a never-been-done-before
           model combining compassion and technology.
         </p>
+
+        <p><a className="bioLink" href="https://jessgoodvibesonly.vercel.app" target="_blank" rel="noreferrer">Meet Jessica Simmonds</a></p>
+      </section>
+
+      <section className="section">
+        <a className="ctaButton" href="https://calendly.com" target="_blank" rel="noreferrer">Book a Synergy Call</a>
       </section>
 
       <section className="final">
@@ -554,7 +578,7 @@ export default function Home() {
           margin: 0 0 14px;
         }
 
-        .button {
+        .ctaButton {
           margin-top: 44px;
           padding: 16px 36px;
           border: 1px solid rgba(255,255,255,0.82);
@@ -675,6 +699,22 @@ export default function Home() {
           line-height: 1.6;
         }
 
+        .ctaButton {
+          display: inline-block;
+          margin-top: 36px;
+          padding: 16px 34px;
+          border-radius: 999px;
+          border: 1px solid rgba(255,255,255,0.82);
+          background: rgba(255,255,255,0.09);
+          color: #bffff8;
+          text-decoration: none;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          box-shadow: 0 0 32px rgba(190,120,255,0.55), 0 0 14px rgba(0,255,225,0.45), inset 0 0 18px rgba(255,255,255,0.06);
+        }
+
+        .bioLink { color: #9fffee; font-weight: 700; }
+
         .card p {
           opacity: 0.76;
           line-height: 1.65;
@@ -701,11 +741,19 @@ export default function Home() {
         .ruleBlock ul { margin: 10px 0 14px 20px; line-height: 1.7; opacity: 0.85; }
         .loopTrack { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
         .loopTrack span { padding: 10px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.06); }
-        .diagram { position: relative; width: min(580px, 90vw); aspect-ratio: 1 / 1; margin: 20px auto; }
+                .diagramDesktop { position: relative; width: min(520px, 88vw); aspect-ratio: 1 / 1; margin: 20px auto; }
         .ring { position: absolute; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; line-height: 1.45; }
-        .outer { inset: 0; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.03); font-size: 15px; }
-        .inner { inset: 14%; border: 1px solid rgba(0,255,225,0.55); background: rgba(0,255,225,0.09); font-size: 14px; }
-        .core { inset: 34%; border: 1px solid rgba(255,0,180,0.58); background: rgba(255,0,180,0.12); font-weight: bold; }
+        .outer { inset: 0; border: 1px solid rgba(255,255,255,0.24); background: rgba(255,255,255,0.03); }
+        .inner { inset: 16%; border: 1px solid rgba(0,255,225,0.55); background: rgba(0,255,225,0.09); }
+        .core { inset: 37%; border: 1px solid rgba(255,0,180,0.58); background: rgba(255,0,180,0.12); font-weight: bold; }
+        .ringTitle { position: absolute; left: 50%; transform: translateX(-50%); text-transform: uppercase; letter-spacing: 0.08em; font-size: 12px; opacity: 0.9; }
+        .outerTitle { top: 10%; }
+        .innerTitle { top: 31%; }
+        .diagramLabels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 8px 0 14px; }
+        .labelGroup { padding: 14px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; background: rgba(255,255,255,0.04); }
+        .labelGroup h4 { margin: 0 0 8px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .labelGroup p { margin: 0; font-size: 15px; line-height: 1.6; }
+        .diagramMobile { display: none; }
         .diagramFlow { text-align: center; opacity: 0.8 !important; letter-spacing: 0.04em; }
         .finalClose { font-size: clamp(28px, 4vw, 48px) !important; text-align: center; line-height: 1.45 !important; }
 
@@ -781,6 +829,14 @@ export default function Home() {
           .card {
             padding: 24px;
           }
+
+          h2 { font-size: clamp(30px, 10vw, 54px); }
+          .gameLine { letter-spacing: 0.2em; }
+          .diagramDesktop, .desktopOnly { display: none; }
+          .diagramMobile { display: grid; gap: 14px; }
+          .diagramMobile .card h4 { margin: 0 0 8px; font-size: 16px; text-transform: uppercase; letter-spacing: 0.04em; }
+          .diagramMobile .card p { margin: 0; }
+          .ruleLine { font-size: 24px !important; }
         }
       `}</style>
     </main>
