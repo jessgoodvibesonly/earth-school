@@ -164,9 +164,16 @@ export default function Home() {
           <div className="card">
             <h3>3. THE FILTER SYSTEM</h3>
             <p>The player is not seeing reality directly. They are seeing reality through a filter.</p>
-            <ul>{filterLens.map((item) => <li key={item}>{item}</li>)}</ul>
-            <p>The filter changes:</p>
-            <ul>{filterEffects.map((item) => <li key={item}>{item}</li>)}</ul>
+            <div className="filterLayout">
+              <div className="filterGroup">
+                <p className="filterLabel">The player sees reality through:</p>
+                {filterLens.map((item) => <p className="filterItem" key={item}>{item}</p>)}
+              </div>
+              <div className="filterGroup">
+                <p className="filterLabel">The filter changes:</p>
+                {filterEffects.map((item) => <p className="filterItem" key={item}>{item}</p>)}
+              </div>
+            </div>
             <p><strong>Same moment. Different filter. Different reality.</strong></p>
             <p>Low awareness → NPC feels rude. Medium awareness → NPC feels neutral. High awareness → deeper meaning is revealed.</p>
             <p className="quoteSoft"><em>“Reality is that which, when you stop believing in it, doesn’t go away.” — Philip K. Dick</em></p>
@@ -361,8 +368,11 @@ export default function Home() {
         <p><a className="bioLink" href="https://jessgoodvibesonly.vercel.app" target="_blank" rel="noreferrer">Meet Jessica Simmonds</a></p>
       </section>
 
-      <section className="section">
-        <a className="ctaButton" href="https://calendly.com" target="_blank" rel="noreferrer">Book a Synergy Call</a>
+      <section className="section bottomCta">
+        <div className="ctaButtons">
+          <a className="ctaButton" href="https://jessgoodvibesonly.vercel.app" target="_blank" rel="noreferrer">Meet Jessica Simmonds</a>
+          <a className="ctaButton" href="https://calendly.com" target="_blank" rel="noreferrer">Book a Synergy Call</a>
+        </div>
       </section>
 
       <section className="final">
@@ -738,7 +748,33 @@ export default function Home() {
         .quoteSoft { opacity: 0.66 !important; font-style: italic; }
         .ruleLine { font-size: 30px !important; color: #98fff2; text-shadow: 0 0 24px rgba(0,255,225,0.48); }
         .ruleGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; width: min(1080px, 100%); }
-        .ruleBlock ul { margin: 10px 0 14px 20px; line-height: 1.7; opacity: 0.85; }
+        .filterLayout {
+          display: grid;
+          gap: 18px;
+          margin: 20px 0 24px;
+        }
+        .filterGroup {
+          text-align: center;
+          border: 1px solid rgba(160, 255, 246, 0.24);
+          border-radius: 20px;
+          padding: 18px 16px 20px;
+          background: rgba(255, 255, 255, 0.04);
+          box-shadow:
+            0 0 24px rgba(0, 255, 225, 0.14),
+            inset 0 0 20px rgba(255, 255, 255, 0.03);
+        }
+        .filterLabel {
+          margin: 0 0 10px;
+          font-size: 18px !important;
+          line-height: 1.6 !important;
+          opacity: 0.92 !important;
+        }
+        .filterItem {
+          margin: 0;
+          font-size: 17px !important;
+          line-height: 1.85 !important;
+          opacity: 0.84 !important;
+        }
         .loopTrack { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
         .loopTrack span { padding: 10px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.22); background: rgba(255,255,255,0.06); }
                 .diagramDesktop { position: relative; width: min(520px, 88vw); aspect-ratio: 1 / 1; margin: 20px auto; }
@@ -789,11 +825,24 @@ export default function Home() {
             rgba(0,0,0,0.12);
         }
 
+        .bottomCta {
+          padding-top: 48px;
+          padding-bottom: 86px;
+        }
+
+        .ctaButtons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 18px;
+          flex-wrap: wrap;
+        }
+
         .final {
           position: relative;
           z-index: 3;
-          min-height: 88vh;
-          padding: 130px 28px;
+          min-height: 72vh;
+          padding: 90px 28px;
           text-align: center;
           display: flex;
           flex-direction: column;
@@ -837,6 +886,11 @@ export default function Home() {
           .diagramMobile .card h4 { margin: 0 0 8px; font-size: 16px; text-transform: uppercase; letter-spacing: 0.04em; }
           .diagramMobile .card p { margin: 0; }
           .ruleLine { font-size: 24px !important; }
+          .ctaButtons {
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+          }
         }
       `}</style>
     </main>
