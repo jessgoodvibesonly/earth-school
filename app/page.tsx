@@ -6,6 +6,7 @@ type Character = {
   role: string;
   description: string;
   image: string;
+  placeholder?: string;
 };
 
 const fileExists = (filePath: string) =>
@@ -13,7 +14,7 @@ const fileExists = (filePath: string) =>
 
 export default function Page() {
   const hasDiner = fileExists("/diner.png");
-  const hasJohn = fileExists("/john.png");
+  const johnImagePath = ["/john.png", "/John.png", "/john-earth-school.png", "/johncharacter.png", "/john-mrs-chen-maya.png"].find(fileExists) ?? "";
   const hasMaya = fileExists("/maya.png");
   const hasMrsChen = fileExists("/mrs-chen.png");
   const hasTrailer = fileExists("/EARTHSCHOOL.mp4");
@@ -32,7 +33,8 @@ export default function Page() {
       role: "The Awakening Mind",
       description:
         "Older, grounded, intelligent, and calm. John begins to notice that the world is responding to him differently.",
-      image: hasJohn ? "/john.png" : "",
+      image: johnImagePath,
+      placeholder: "John image coming soon",
     },
     {
       name: "Maya",
@@ -95,14 +97,15 @@ export default function Page() {
       </section>
 
       <section className="section">
-        <h2>Meet The First Characters</h2>
+        <h2>Meet the First Cinematic Characters</h2>
+        <p className="section-text">These are early example characters for the pre-rendered cinematic trailer we are currently developing. Final character designs may evolve as the cinematic and vertical slice are built.</p>
         <div className="grid three">
           {characters.map((character) => (
             <article key={character.name} className="character-card">
               {character.image ? (
                 <img src={character.image} alt={character.name} loading="lazy" />
               ) : (
-                <div className="img-placeholder">Character Portrait</div>
+                <div className="img-placeholder">{character.placeholder ?? "Character Portrait"}</div>
               )}
               <div className="card-copy">
                 <h3>{character.name}</h3>
