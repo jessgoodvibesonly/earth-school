@@ -201,6 +201,40 @@ export default function Page() {
         </div>
       </section>
 
+
+
+      <section className="section">
+        <p className="label">AI DEVELOPMENT PIPELINE</p>
+        <h2>Built with AI-assisted game development, guided by human vision</h2>
+        <p className="section-text">EARTH SCHOOL is being developed through a focused AI-assisted workflow that helps accelerate prototyping, research, technical planning, documentation, and iteration. AI supports the process, but the creative direction, philosophy, systems design, and final decisions remain human-led.</p>
+        <div className="grid three ai-pipeline-grid">
+          <article className="glass-card">
+            <h3>Project-Wide Context</h3>
+            <p>Before features are built, the project defines its core identity: genre, tone, creative pillars, game loop, tech stack, coding guidelines, and production rules. This keeps AI aligned with the vision instead of drifting into generic game design.</p>
+          </article>
+          <article className="glass-card">
+            <h3>Focused Feature Briefs</h3>
+            <p>Each new feature begins as a clear concept. Awareness systems, perception shifts, AI reflection, dialogue loops, and environment reactions are broken into focused briefs before any code or prototype work begins.</p>
+          </article>
+          <article className="glass-card">
+            <h3>Research-Informed Design</h3>
+            <p>Similar mechanics from games, interactive media, neuroscience, metaphysics, and consciousness-based experiences are studied to refine how EARTH SCHOOL can feel familiar enough to understand, but original enough to stand apart.</p>
+          </article>
+          <article className="glass-card">
+            <h3>Technical Specifications</h3>
+            <p>Feature ideas are translated into practical technical specs for Unreal Engine 5, including required systems, scene logic, data flow, interaction rules, AI behavior, and what should not be changed.</p>
+          </article>
+          <article className="glass-card">
+            <h3>Modular Prototyping</h3>
+            <p>Systems are built in small, independent modules: awareness, perception filters, NPC reflection, emotional state, environment response, audio shifts, and player choice tracking. This keeps the prototype flexible and easier to test.</p>
+          </article>
+          <article className="glass-card">
+            <h3>Testing + Documentation</h3>
+            <p>Each feature is tested inside the vertical slice, refined through feedback, and documented so future developers, designers, and AI tools can understand how the system works and expand it safely.</p>
+          </article>
+        </div>
+        <p className="section-text ai-pipeline-close">EARTH SCHOOL is not being built as a traditional game first. It is being built as a consciousness experience engine, one system at a time.</p>
+      </section>
       <section id="experience" className="section final-cta">
         <h2>The Experience Is Already Beginning</h2>
         <p className="section-text">EARTH SCHOOL is currently in development as an Unreal Engine 5 vertical slice beginning with the Neon Diner experience.</p>
@@ -262,6 +296,8 @@ export default function Page() {
         }
         .experience-section .section-text { max-width: 760px; margin-top: .75rem; }
         .experience-section .grid { margin-top: 1.35rem; }
+        .ai-pipeline-grid { margin-top: 1.35rem; }
+        .ai-pipeline-close { text-align: center; margin-top: 1.1rem; }
         .footer { border-top:1px solid rgba(160,200,255,.22); text-align:center; padding:2rem 1rem 3rem; color:#b8bfdc; width:100%; max-width:100%; overflow-x:hidden; }
         @media (min-width: 640px) {
           .button-row a { width: auto; }
