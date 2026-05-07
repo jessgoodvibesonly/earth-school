@@ -118,35 +118,41 @@ export default function Page() {
       </section>
 
       <section className="section experience-section">
+        <p className="experience-prompt">Can you see your own face right now?</p>
         <h2>EARTH SCHOOL — The Experience</h2>
         <p className="section-text">
-          Earth School is not just a game.
+          Earth School is a perception-based interactive experience where consciousness shapes reality.
+        </p>
+        <p className="section-text">It blends metaphysics, neuroscience, and universal laws into a living system where awareness is the input.</p>
+        <p className="section-text">
+          What you focus on expands.
           <br />
-          It is a perception-based interactive experience where awareness shapes reality.
+          What you believe filters your world.
+          <br />
+          What you feel influences what unfolds.
         </p>
         <p className="section-text">
-          Players do not simply complete objectives.
+          Players are not controlling a character.
           <br />
-          They observe, choose, react, and evolve.
+          They are experiencing themselves through one.
         </p>
         <p className="section-text">
-          What you notice changes what you experience.
+          This is not about winning.
           <br />
-          What you believe changes how the world responds.
+          It is about noticing.
         </p>
-        <p className="section-text">This is a temporary human experience, inside a system designed to reflect you.</p>
         <div className="grid three">
           <article className="glass-card">
-            <h3>Perception is Gameplay</h3>
-            <p>The world shifts based on attention, emotion, and awareness. Two players can experience the same moment completely differently.</p>
+            <h3>Perception is Reality</h3>
+            <p>The brain filters billions of inputs every second. In Earth School, that filter becomes visible. Change your awareness, and the world changes with it.</p>
           </article>
           <article className="glass-card">
-            <h3>Evolve or Stay Unaware</h3>
-            <p>There are no traditional levels. Progression happens through awareness, patterns, and the choices you make.</p>
+            <h3>Universal Laws in Motion</h3>
+            <p>Principles like attention, intention, and cause and effect are not theories here. They are systems you experience in real time.</p>
           </article>
           <article className="glass-card">
-            <h3>AI + Consciousness Design</h3>
-            <p>An adaptive system responds to player behavior, creating a personalized experience that reflects thoughts, actions, and internal state.</p>
+            <h3>AI-Driven Reflection System</h3>
+            <p>An adaptive AI layer responds to your behavior, mirroring patterns, choices, and emotional states to create a deeply personal experience.</p>
           </article>
         </div>
       </section>
@@ -248,6 +254,13 @@ export default function Page() {
         .chip { border:1px solid rgba(117, 224, 255, .45); color:#dff8ff; font-size:.82rem; padding:.45rem .7rem; border-radius:999px; background:rgba(42, 84, 136, .2); }
         .final-cta { text-align:center; }
         .experience-section { text-align: center; }
+        .experience-prompt {
+          margin: 0 0 .6rem;
+          font-size: clamp(.95rem, 2.4vw, 1.2rem);
+          letter-spacing: .04em;
+          color: #9de8ff;
+          text-shadow: 0 0 10px rgba(64, 219, 255, .7), 0 0 20px rgba(255, 91, 208, .4);
+        }
         .experience-section .section-text { max-width: 760px; margin-top: .75rem; }
         .experience-section .grid { margin-top: 1.35rem; }
         .footer { border-top:1px solid rgba(160,200,255,.22); text-align:center; padding:2rem 1rem 3rem; color:#b8bfdc; width:100%; max-width:100%; overflow-x:hidden; }
