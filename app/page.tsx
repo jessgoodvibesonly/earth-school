@@ -65,20 +65,33 @@ export default function Page() {
 
   return (
     <main className="page-root">
-      <section className="hero" aria-label="Hero">
-        <div className="hero-bg" style={hasDiner ? { backgroundImage: "url('/diner.png')" } : undefined} />
-        <div className="overlay" />
+      <section className="relative min-h-[85vh] w-full overflow-hidden bg-black" aria-label="Hero">
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-80"
+          style={hasDiner ? { backgroundImage: "url('/diner.png')" } : undefined}
+        />
+        <div className="absolute inset-0 z-10 bg-black/45" />
         <div className="rain" />
-        <div className="hero-content">
-          <p className="label">THE GAME</p>
-          <h1>EARTH SCHOOL</h1>
-          <p className="subheadline">A Temporary Human Experience</p>
-          <p className="intro">A cinematic AI-integrated interactive experience exploring awareness, perception, consciousness, and the human experience.</p>
-          <div className="button-row">
-            <a href="#trailer">Watch Cinematic Trailer</a>
-            <a href="#vision">View Vision</a>
-            <a href="#experience">Enter The Experience</a>
-          </div>
+        <div className="relative z-30 mx-auto flex min-h-[85vh] max-w-6xl flex-col items-center justify-center px-6 text-center">
+          <p className="mb-4 text-sm font-black uppercase tracking-[0.35em] text-cyan-300 sm:text-base">
+            THE GAME
+          </p>
+
+          <h1 className="text-5xl font-black tracking-[0.08em] text-white sm:text-7xl md:text-8xl lg:text-9xl">
+            EARTH SCHOOL
+          </h1>
+
+          <p className="mt-5 text-2xl font-bold text-yellow-200 sm:text-3xl md:text-4xl">
+            A Temporary Human Experience
+          </p>
+
+          <p className="mt-5 text-xl font-semibold text-white sm:text-2xl md:text-3xl">
+            Can you see your own face right now?
+          </p>
+
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/85 sm:text-xl">
+            A cinematic AI-integrated interactive experience exploring awareness, perception, consciousness, and what it means to be human.
+          </p>
         </div>
       </section>
 
@@ -180,7 +193,7 @@ export default function Page() {
         .hero { position: relative; min-height: 90vh; display: grid; place-items: center; overflow: hidden; }
         .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #1a1038, #08101f 60%, #2a1038); background-size: cover; background-position: center; transform: scale(1.05); }
         .overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(6,8,18,.35), rgba(2,5,12,.88)), radial-gradient(circle at 18% 20%, rgba(255, 62, 178, .35), transparent 45%), radial-gradient(circle at 80% 35%, rgba(46, 205, 255, .28), transparent 40%), radial-gradient(circle at 55% 80%, rgba(255, 175, 43, .2), transparent 30%); }
-        .rain { position:absolute; inset:0; opacity:.28; background: repeating-linear-gradient(102deg, rgba(188,231,255,.28) 0 1px, transparent 1px 13px), linear-gradient(180deg, transparent 0%, rgba(92, 175, 255, .18) 100%); }
+        .rain { position:absolute; inset:0; z-index:10; opacity:.28; background: repeating-linear-gradient(102deg, rgba(188,231,255,.28) 0 1px, transparent 1px 13px), linear-gradient(180deg, transparent 0%, rgba(92, 175, 255, .18) 100%); }
         .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 2rem 1rem; text-align: center; }
         .label { letter-spacing: .25em; color:#96f2ff; font-size:.78rem; margin-bottom:1rem; }
         h1 { font-size: clamp(2.4rem, 8vw, 6rem); margin: 0; letter-spacing:.06em; }
