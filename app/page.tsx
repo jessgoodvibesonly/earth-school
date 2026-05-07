@@ -204,16 +204,8 @@ export default function Page() {
       <section id="experience" className="section final-cta">
         <h2>The Experience Is Already Beginning</h2>
         <p className="section-text">EARTH SCHOOL is currently in development as an Unreal Engine 5 vertical slice beginning with the Neon Diner experience.</p>
-        <div className="button-row">
+        <div className="button-row flex justify-center mt-8">
           <a href="https://jessgoodvibesonly.vercel.app" target="_blank" rel="noopener noreferrer">Learn More About Jessica</a>
-          <a
-            href="https://jessgoodvibesonly.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ background: 'transparent', border: '1px solid rgba(147,223,255,.55)' }}
-          >
-            Explore EARTH SCHOOL Vision
-          </a>
         </div>
         <p className="section-text">This project is currently in active development. Early collaborators and aligned partners are welcome.</p>
       </section>
