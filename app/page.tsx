@@ -117,6 +117,40 @@ export default function Page() {
         </div>
       </section>
 
+      <section className="section experience-section">
+        <h2>EARTH SCHOOL — The Experience</h2>
+        <p className="section-text">
+          Earth School is not just a game.
+          <br />
+          It is a perception-based interactive experience where awareness shapes reality.
+        </p>
+        <p className="section-text">
+          Players do not simply complete objectives.
+          <br />
+          They observe, choose, react, and evolve.
+        </p>
+        <p className="section-text">
+          What you notice changes what you experience.
+          <br />
+          What you believe changes how the world responds.
+        </p>
+        <p className="section-text">This is a temporary human experience, inside a system designed to reflect you.</p>
+        <div className="grid three">
+          <article className="glass-card">
+            <h3>Perception is Gameplay</h3>
+            <p>The world shifts based on attention, emotion, and awareness. Two players can experience the same moment completely differently.</p>
+          </article>
+          <article className="glass-card">
+            <h3>Evolve or Stay Unaware</h3>
+            <p>There are no traditional levels. Progression happens through awareness, patterns, and the choices you make.</p>
+          </article>
+          <article className="glass-card">
+            <h3>AI + Consciousness Design</h3>
+            <p>An adaptive system responds to player behavior, creating a personalized experience that reflects thoughts, actions, and internal state.</p>
+          </article>
+        </div>
+      </section>
+
       <section id="trailer" className="section">
         <h2>Cinematic Trailer</h2>
         <p className="section-text">A premium pre-rendered cinematic experience introducing the world, characters, and perception systems behind EARTH SCHOOL.</p>
@@ -213,6 +247,9 @@ export default function Page() {
         .chip-wrap { display:flex; flex-wrap:wrap; gap:.55rem; margin:1rem 0 1.1rem; }
         .chip { border:1px solid rgba(117, 224, 255, .45); color:#dff8ff; font-size:.82rem; padding:.45rem .7rem; border-radius:999px; background:rgba(42, 84, 136, .2); }
         .final-cta { text-align:center; }
+        .experience-section { text-align: center; }
+        .experience-section .section-text { max-width: 760px; margin-top: .75rem; }
+        .experience-section .grid { margin-top: 1.35rem; }
         .footer { border-top:1px solid rgba(160,200,255,.22); text-align:center; padding:2rem 1rem 3rem; color:#b8bfdc; width:100%; max-width:100%; overflow-x:hidden; }
         @media (min-width: 640px) {
           .button-row a { width: auto; }
