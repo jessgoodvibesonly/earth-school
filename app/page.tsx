@@ -237,17 +237,16 @@ export default function Page() {
       </section>
       <section id="experience" className="section final-cta">
         <h2>The Experience Is Already Beginning</h2>
-        <p className="section-text">EARTH SCHOOL is currently in development as an Unreal Engine 5 vertical slice beginning with the Neon Diner experience.</p>
+        <p className="section-text">EARTH SCHOOL is currently in development as an Unreal Engine 5 pre-rendered cinematic experience beginning with the Neon Diner scene.</p>
         <div className="button-row flex justify-center mt-8">
           <a href="https://jessgoodvibesonly.vercel.app" target="_blank" rel="noopener noreferrer">Learn More About Jessica</a>
         </div>
-        <p className="section-text">This project is currently in active development. Early collaborators and aligned partners are welcome.</p>
       </section>
 
       <footer className="footer">
         <p>EARTH SCHOOL: A Temporary Human Experience</p>
         <p>Created by Jessica Simmonds</p>
-        <p>Peace, light, and levity.</p>
+        <p>A consciousness-driven cinematic experience exploring perception, awareness, neuroscience, metaphysics, and the nature of reality.</p>
       </footer>
 
       <style>{`
@@ -263,7 +262,7 @@ export default function Page() {
         .subheadline { margin-top:.8rem; font-size: clamp(1rem, 2.8vw, 1.35rem); color:#ffd08d; }
         .intro, .section-text { max-width: 760px; margin: 1rem auto 0; color:#d4d8ef; line-height:1.65; }
         .button-row { display:flex; flex-wrap:wrap; justify-content:center; gap:.75rem; margin-top:1.5rem; width:100%; }
-        .button-row a { text-decoration:none; color:#fff; padding:.75rem 1rem; border-radius:999px; border:1px solid rgba(147,223,255,.45); background: linear-gradient(120deg, rgba(255,81,194,.2), rgba(67,196,255,.22)); backdrop-filter: blur(6px); transition: transform .2s ease, box-shadow .2s ease; width: 100%; max-width: 100%; }
+        .button-row a { text-decoration:none; color:#fff; padding:.75rem 1rem; border-radius:999px; border:1px solid rgba(147,223,255,.45); background: linear-gradient(120deg, rgba(255,81,194,.2), rgba(67,196,255,.22)); backdrop-filter: blur(6px); transition: transform .2s ease, box-shadow .2s ease; width: 100%; max-width: min(100%, 420px); text-align:center; }
         .button-row a:hover { transform: translateY(-2px); box-shadow: 0 0 24px rgba(104, 193, 255, .35); }
         .section { padding: 3.5rem 1rem; width: 100%; max-width: 1120px; margin: 0 auto; }
         h2 { font-size: clamp(1.7rem, 5vw, 2.7rem); margin: 0 0 1.4rem; }
@@ -285,7 +284,7 @@ export default function Page() {
         .notice { margin-top: 1rem; color:#9de8ff; }
         .chip-wrap { display:flex; flex-wrap:wrap; gap:.55rem; margin:1rem 0 1.1rem; }
         .chip { border:1px solid rgba(117, 224, 255, .45); color:#dff8ff; font-size:.82rem; padding:.45rem .7rem; border-radius:999px; background:rgba(42, 84, 136, .2); }
-        .final-cta { text-align:center; }
+        .final-cta { text-align:center; display:flex; flex-direction:column; align-items:center; gap:.5rem; }
         .experience-section { text-align: center; }
         .experience-prompt {
           margin: 0 0 .6rem;
