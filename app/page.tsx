@@ -71,16 +71,26 @@ export default function Page() {
         <div className="hero-bg" style={hasDiner ? { backgroundImage: "url('/diner.png')" } : undefined} />
         <div className="overlay" />
         <div className="rain" />
-        <div className="hero-content">
-          <p className="label">THE GAME</p>
-          <h1>EARTH SCHOOL</h1>
-          <p className="subheadline">A Temporary Human Experience</p>
-          <p className="intro">A cinematic AI-integrated interactive experience exploring awareness, perception, consciousness, and the human experience.</p>
-          <div className="button-row">
-            <a href="#trailer">Watch Cinematic Trailer</a>
-            <a href="#vision">View Vision</a>
-            <a href="#experience">Enter The Experience</a>
-          </div>
+        <div className="relative z-20 mx-auto flex min-h-[85vh] max-w-6xl flex-col items-center justify-center px-6 text-center">
+          <p className="mb-4 text-sm font-black uppercase tracking-[0.35em] text-cyan-300 sm:text-base">
+            THE GAME
+          </p>
+
+          <h1 className="text-center text-5xl font-black tracking-[0.08em] text-white drop-shadow-[0_0_30px_rgba(103,232,249,0.35)] sm:text-7xl md:text-8xl lg:text-9xl">
+            EARTH SCHOOL
+          </h1>
+
+          <p className="mt-5 text-2xl font-bold text-yellow-200 sm:text-3xl md:text-4xl">
+            A Temporary Human Experience
+          </p>
+
+          <p className="mt-5 text-xl font-semibold text-white sm:text-2xl md:text-3xl">
+            Can you see your own face right now?
+          </p>
+
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/85 sm:text-xl">
+            A cinematic AI-integrated interactive experience exploring awareness, perception, consciousness, and what it means to be human.
+          </p>
         </div>
       </section>
 
