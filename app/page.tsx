@@ -1,94 +1,108 @@
-import fs from "node:fs";
-import path from "node:path";
+const platforms = [
+  "PC",
+  "Console",
+  "Mobile",
+  "VR",
+  "XR",
+  "Spatial Computing",
+  "AI Companion Systems",
+];
 
-type Character = {
-  name: string;
-  role: string;
-  description: string;
-  image: string;
-  placeholder?: string;
-};
+const pillars = [
+  ["AWARENESS", "Notice more. Experience differently."],
+  ["PERCEPTION", "Your filter changes how the world appears."],
+  ["CHOICE", "Every response shapes the experience."],
+  ["IDENTITY", "You are more than the role you play."],
+  ["EVOLUTION", "Progression is measured through awareness, not only achievement."],
+  ["CREATIVITY", "Create from who you truly are."],
+];
 
-const fileExists = (filePath: string) =>
-  fs.existsSync(path.join(process.cwd(), "public", filePath.replace(/^\//, "")));
+const themes = [
+  "consciousness",
+  "emotional regulation",
+  "compassion",
+  "boundaries",
+  "creativity",
+  "identity",
+  "perception",
+  "self-awareness",
+  "relationships",
+  "human behavior",
+  "spiritual growth",
+];
+
+const characters = [
+  ["John", "/John.png"],
+  ["Mrs. Chen", "/mrs-chen.png"],
+  ["Maya", "/maya.png"],
+];
 
 export default function Page() {
-  const hasDiner = fileExists("/diner.png");
-  const johnImagePath = ["/john.png", "/John.png", "/john-earth-school.png", "/johncharacter.png", "/john-mrs-chen-maya.png"].find(fileExists) ?? "";
-  const hasMaya = fileExists("/maya.png");
-  const hasMrsChen = fileExists("/mrs-chen.png");
-  const hasTrailer = fileExists("/EARTHSCHOOL.mp4");
-
-  const pillars = [
-    ["Awareness Shapes Reality", "The world changes based on what the player notices."],
-    ["AI as Reflection", "AI systems adapt to the player’s behavior, choices, emotional patterns, and attention."],
-    ["The Filter System", "Different players can experience the same world in completely different ways."],
-    ["Evolution Through Choice", "Players evolve or devolve through awareness, boundaries, habits, compassion, and action."],
-    ["A Temporary Human Experience", "EARTH SCHOOL explores the idea that life itself may be a classroom for consciousness."],
-  ];
-
-  const characters: Character[] = [
-    {
-      name: "John",
-      role: "The Awakening Mind",
-      description:
-        "Older, grounded, intelligent, and calm. John begins to notice that the world is responding to him differently.",
-      image: johnImagePath,
-      placeholder: "John image coming soon",
-    },
-    {
-      name: "Maya",
-      role: "The Emotional Mirror",
-      description:
-        "Stylish, magnetic, emotionally intelligent, and complex. Maya reveals how perception, emotion, and inner state can shape the same moment.",
-      image: hasMaya ? "/maya.png" : "",
-    },
-    {
-      name: "Mrs. Chen",
-      role: "The Observer",
-      description:
-        "Quiet, perceptive, calm, and understated. She never explains the system. She reflects it.",
-      image: hasMrsChen ? "/mrs-chen.png" : "",
-    },
-  ];
-
-  const chips = [
-    "Unreal Engine 5",
-    "AI Reflection Systems",
-    "PC",
-    "Console",
-    "Steam",
-    "Spatial Computing",
-    "Future AR Layer",
-    "Awareness-Based Gameplay",
-    "Interactive Storytelling",
-    "Human Potential",
-  ];
-
   return (
     <main className="page-root">
-      <section className="hero" aria-label="Hero">
-        <div className="hero-bg" style={hasDiner ? { backgroundImage: "url('/diner.png')" } : undefined} />
-        <div className="overlay" />
-        <div className="rain" />
+      <section className="hero" aria-labelledby="hero-title">
+        <img
+          className="hero-image"
+          src="/EARTHSCHOOLnewimage.png"
+          alt="EARTH SCHOOL neon diner cinematic key art"
+        />
+        <div className="hero-overlay" />
+        <div className="hero-scanlines" />
         <div className="hero-content">
-          <p className="label">THE GAME</p>
-          <h1>EARTH SCHOOL</h1>
-          <p className="subheadline">A Temporary Human Experience</p>
-          <p className="intro">A cinematic AI-integrated interactive experience exploring awareness, perception, consciousness, and the human experience.</p>
-          <div className="button-row">
-            <a href="#trailer">Watch Cinematic Trailer</a>
-            <a href="#vision">View Vision</a>
-            <a href="#experience">Enter The Experience</a>
+          <p className="eyebrow">EARTH SCHOOL • A Temporary Human Experience</p>
+          <h1 id="hero-title">EARTH SCHOOL</h1>
+          <p className="hero-subheadline">A Temporary Human Experience</p>
+          <figure className="hero-quote">
+            <blockquote>“Can you see your own face right now?”</blockquote>
+            <figcaption>— Rev. Dr. Jessica Simmonds</figcaption>
+          </figure>
+          <p className="hero-copy">
+            EARTH SCHOOL is a cross-platform cinematic game experience about awareness,
+            perception, identity, choice, and waking up inside the human experience.
+          </p>
+          <div className="button-row" aria-label="Primary actions">
+            <a className="button primary" href="#game">EXPLORE THE GAME</a>
+            <a className="button secondary" href="#journey">STAY UPDATED</a>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <h2>Perception Is The Gameplay</h2>
-        <div className="grid five">
+      <section id="platforms" className="section narrow" aria-labelledby="platforms-title">
+        <p className="eyebrow">future platform direction</p>
+        <h2 id="platforms-title">CROSS-PLATFORM EXPERIENCE</h2>
+        <p className="section-text">
+          EARTH SCHOOL is being designed as a future cross-platform experience that can evolve
+          across PC, console, mobile, VR, XR, spatial computing, and immersive companion experiences.
+        </p>
+        <div className="chip-wrap" aria-label="Future platform direction labels">
+          {platforms.map((platform) => (
+            <span className="chip" key={platform}>{platform}</span>
+          ))}
+        </div>
+      </section>
+
+      <section id="what-is-earth-school" className="section" aria-labelledby="what-title">
+        <div className="section-card feature-card">
+          <p className="eyebrow">EARTH SCHOOL • A Temporary Human Experience</p>
+          <h2 id="what-title">WHAT IS EARTH SCHOOL?</h2>
+          <p className="section-text strong">
+            EARTH SCHOOL is part video game, part cinematic experience, and part education system
+            for the soul.
+          </p>
+          <p className="section-text">
+            Through story, character encounters, reflective choices, awareness-based mechanics, and
+            immersive environments, players explore what it means to live, learn, evolve, and remember
+            who they are beyond the role they are playing.
+          </p>
+        </div>
+      </section>
+
+      <section id="game" className="section" aria-labelledby="game-title">
+        <p className="eyebrow">awareness is the mechanic</p>
+        <h2 id="game-title">THE GAME EXPERIENCE</h2>
+        <div className="grid pillars-grid">
           {pillars.map(([title, text]) => (
-            <article key={title} className="glass-card">
+            <article className="glass-card" key={title}>
               <h3>{title}</h3>
               <p>{text}</p>
             </article>
@@ -96,221 +110,506 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="section">
-        <h2>Meet the First Cinematic Characters</h2>
-        <p className="section-text">These are early example characters for the pre-rendered cinematic trailer we are currently developing. Final character designs may evolve as the cinematic and vertical slice are built.</p>
-        <div className="grid three">
-          {characters.map((character) => (
-            <article key={character.name} className="character-card">
-              {character.image ? (
-                <img src={character.image} alt={character.name} loading="lazy" />
-              ) : (
-                <div className="img-placeholder">{character.placeholder ?? "Character Portrait"}</div>
-              )}
-              <div className="card-copy">
-                <h3>{character.name}</h3>
-                <p className="role">{character.role}</p>
-                <p>{character.description}</p>
-              </div>
+      <section className="section split-section" aria-labelledby="soul-title">
+        <div className="section-card glow-panel">
+          <p className="eyebrow">progression through consciousness</p>
+          <h2 id="soul-title">EVOLVE THE SOUL</h2>
+          <p className="section-text">
+            In EARTH SCHOOL, the player does not only level up. The player wakes up.
+          </p>
+          <p className="section-text">
+            Progression is built around awareness, emotional intelligence, boundaries, compassion,
+            authenticity, creativity, and conscious action.
+          </p>
+          <p className="section-text">
+            The world responds to how the player sees, chooses, listens, reacts, pauses, and grows.
+          </p>
+          <p className="mantra">Awareness changes the experience.</p>
+        </div>
+      </section>
+
+      <section className="section education-section" aria-labelledby="education-title">
+        <p className="eyebrow">learning by living it</p>
+        <h2 id="education-title">EDUCATION THROUGH EXPERIENCE</h2>
+        <p className="section-text">
+          EARTH SCHOOL is designed to teach through immersion, not lectures.
+        </p>
+        <p className="section-text">
+          Players learn through moments, choices, consequences, conversations, environments,
+          reflection, and pattern recognition.
+        </p>
+        <p className="section-text small-heading">Themes may include:</p>
+        <ul className="theme-grid">
+          {themes.map((theme) => (
+            <li key={theme}>{theme}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="cinematic" className="section cinematic-section" aria-labelledby="cinematic-title">
+        <p className="eyebrow">EARTH SCHOOL • A Temporary Human Experience</p>
+        <h2 id="cinematic-title">PRE-RENDERED CINEMATIC COMING SOON</h2>
+        <p className="release">Target Release: June 2026</p>
+        <p className="section-text">
+          The first cinematic glimpse into EARTH SCHOOL is currently in development, introducing the
+          neon diner, the awareness shift, the perception filter, and the beginning of the temporary
+          human experience.
+        </p>
+        <div className="video-placeholder" role="img" aria-label="Pre-rendered cinematic coming soon June 2026">
+          <span>PRE-RENDERED CINEMATIC</span>
+          <strong>COMING SOON</strong>
+          <em>JUNE 2026</em>
+        </div>
+      </section>
+
+      <section className="section diner-section" aria-labelledby="diner-title">
+        <p className="eyebrow">first world</p>
+        <h2 id="diner-title">ENTER THE DINER</h2>
+        <p className="section-text">
+          The first world of EARTH SCHOOL begins in a neon-lit retro diner where ordinary moments
+          become extraordinary clues.
+        </p>
+        <div className="diner-lines" aria-label="Diner world principles">
+          <p>The diner is a mirror.</p>
+          <p>The characters are reflections.</p>
+          <p>The environment responds to awareness.</p>
+        </div>
+        <div className="grid character-grid">
+          {characters.map(([name, image]) => (
+            <article className="character-card" key={name}>
+              <img src={image} alt={`${name} from EARTH SCHOOL`} loading="lazy" />
+              <h3>{name}</h3>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section experience-section">
-        <p className="experience-prompt">Can you see your own face right now?</p>
-        <h2>EARTH SCHOOL — The Experience</h2>
-        <p className="section-text">
-          Earth School is a perception-based interactive experience where consciousness shapes reality.
-        </p>
-        <p className="section-text">It blends metaphysics, neuroscience, and universal laws into a living system where awareness is the input.</p>
-        <p className="section-text">
-          What you focus on expands.
-          <br />
-          What you believe filters your world.
-          <br />
-          What you feel influences what unfolds.
-        </p>
-        <p className="section-text">
-          Players are not controlling a character.
-          <br />
-          They are experiencing themselves through one.
-        </p>
-        <p className="section-text">
-          This is not about winning.
-          <br />
-          It is about noticing.
-        </p>
-        <div className="grid three">
-          <article className="glass-card">
-            <h3>Perception is Reality</h3>
-            <p>The brain filters billions of inputs every second. In Earth School, that filter becomes visible. Change your awareness, and the world changes with it.</p>
-          </article>
-          <article className="glass-card">
-            <h3>Universal Laws in Motion</h3>
-            <p>Principles like attention, intention, and cause and effect are not theories here. They are systems you experience in real time.</p>
-          </article>
-          <article className="glass-card">
-            <h3>AI-Driven Reflection System</h3>
-            <p>An adaptive AI layer responds to your behavior, mirroring patterns, choices, and emotional states to create a deeply personal experience.</p>
-          </article>
+      <section id="journey" className="section journey-section" aria-labelledby="journey-title">
+        <div className="section-card cta-card">
+          <p className="eyebrow">development journey</p>
+          <h2 id="journey-title">JOIN THE JOURNEY</h2>
+          <p className="section-text">
+            Follow the development of EARTH SCHOOL, the pre-rendered cinematic, character reveals,
+            music, worldbuilding, behind-the-scenes updates, and future immersive experiences.
+          </p>
+          <div className="button-row" aria-label="Community actions">
+            <a className="button primary" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20updates">STAY UPDATED</a>
+            <a className="button secondary" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20Synergy%20Call">JOIN THE SYNERGY CALL</a>
+          </div>
         </div>
       </section>
 
-      <section id="trailer" className="section">
-        <h2>Cinematic Trailer</h2>
-        <p className="section-text">A premium pre-rendered cinematic experience introducing the world, characters, and perception systems behind EARTH SCHOOL.</p>
-        <div className="media-wrap">
-          {hasTrailer ? (
-            <video controls playsInline preload="metadata" className="trailer-video">
-              <source src="/EARTHSCHOOL.mp4" type="video/mp4" />
-            </video>
-          ) : (
-            <div className="trailer-placeholder">Trailer Coming Soon</div>
-          )}
-        </div>
-        <p className="notice">“You’re noticing.”</p>
-      </section>
-
-      <section id="vision" className="section">
-        <h2>Built For The Next Era Of Interactive Experience</h2>
-        <p className="section-text">EARTH SCHOOL is being designed as a cinematic AI-powered experience for PC, console, Steam, immersive technology, and future spatial computing platforms.</p>
-        <div className="chip-wrap">
-          {chips.map((chip) => (
-            <span key={chip} className="chip">{chip}</span>
-          ))}
-        </div>
-        <p className="section-text">The AI layer is not just a feature. It is part of the experience infrastructure. It helps the world respond, reflect, and evolve around the player’s choices, attention, patterns, and state of awareness.</p>
-      </section>
-
-      <section className="section">
-        <h2>Built For Strategic Partners</h2>
-        <div className="grid three">
-          <article className="glass-card">
-            <h3>For Consciousness &amp; Wellness Leaders</h3>
-            <p>EARTH SCHOOL brings awareness, reflection, emotional intelligence, and human potential into an interactive format designed for the next generation.</p>
-          </article>
-          <article className="glass-card">
-            <h3>For Investors</h3>
-            <p>EARTH SCHOOL is a scalable entertainment and technology IP with expansion potential across games, AI, spatial computing, companion apps, education, wellness, and media.</p>
-          </article>
-          <article className="glass-card">
-            <h3>For Publishers &amp; Platform Partners</h3>
-            <p>EARTH SCHOOL is designed as a premium cinematic game experience with strong world-building, AI-powered systems, franchise potential, and future cross-platform growth.</p>
-          </article>
-        </div>
-      </section>
-
-
-
-      <section className="section">
-        <p className="label">AI DEVELOPMENT PIPELINE</p>
-        <h2>Built with AI-assisted game development, guided by human vision</h2>
-        <p className="section-text">EARTH SCHOOL is being developed through a focused AI-assisted workflow that helps accelerate prototyping, research, technical planning, documentation, and iteration. AI supports the process, but the creative direction, philosophy, systems design, and final decisions remain human-led.</p>
-        <div className="grid three ai-pipeline-grid">
-          <article className="glass-card">
-            <h3>Project-Wide Context</h3>
-            <p>Before features are built, the project defines its core identity: genre, tone, creative pillars, game loop, tech stack, coding guidelines, and production rules. This keeps AI aligned with the vision instead of drifting into generic game design.</p>
-          </article>
-          <article className="glass-card">
-            <h3>Focused Feature Briefs</h3>
-            <p>Each new feature begins as a clear concept. Awareness systems, perception shifts, AI reflection, dialogue loops, and environment reactions are broken into focused briefs before any code or prototype work begins.</p>
-          </article>
-          <article className="glass-card">
-            <h3>Research-Informed Design</h3>
-            <p>Similar mechanics from games, interactive media, neuroscience, metaphysics, and consciousness-based experiences are studied to refine how EARTH SCHOOL can feel familiar enough to understand, but original enough to stand apart.</p>
-          </article>
-          <article className="glass-card">
-            <h3>Technical Specifications</h3>
-            <p>Feature ideas are translated into practical technical specs for Unreal Engine 5, including required systems, scene logic, data flow, interaction rules, AI behavior, and what should not be changed.</p>
-          </article>
-          <article className="glass-card">
-            <h3>Modular Prototyping</h3>
-            <p>Systems are built in small, independent modules: awareness, perception filters, NPC reflection, emotional state, environment response, audio shifts, and player choice tracking. This keeps the prototype flexible and easier to test.</p>
-          </article>
-          <article className="glass-card">
-            <h3>Testing + Documentation</h3>
-            <p>Each feature is tested inside the vertical slice, refined through feedback, and documented so future developers, designers, and AI tools can understand how the system works and expand it safely.</p>
-          </article>
-        </div>
-        <p className="section-text ai-pipeline-close">EARTH SCHOOL is not being built as a traditional game first. It is being built as a consciousness experience engine, one system at a time.</p>
-      </section>
-      <section id="experience" className="section final-cta">
-        <h2>The Experience Is Already Beginning</h2>
-        <p className="section-text">EARTH SCHOOL is currently in development as an Unreal Engine 5 pre-rendered cinematic experience beginning with the Neon Diner scene.</p>
-        <div className="button-row flex justify-center mt-8">
-          <a href="https://jessgoodvibesonly.vercel.app" target="_blank" rel="noopener noreferrer">Learn More About Jessica</a>
-        </div>
+      <section className="quote-section" aria-label="EARTH SCHOOL quote">
+        <figure>
+          <blockquote>“Can you see your own face right now?”</blockquote>
+          <figcaption>— Rev. Dr. Jessica Simmonds</figcaption>
+        </figure>
       </section>
 
       <footer className="footer">
-        <p>EARTH SCHOOL: A Temporary Human Experience</p>
-        <p>Created by Jessica Simmonds</p>
-        <p>A consciousness-driven cinematic experience exploring perception, awareness, neuroscience, metaphysics, and the nature of reality.</p>
+        <p>EARTH SCHOOL • A Temporary Human Experience</p>
+        <p>Created by Rev. Dr. Jessica Simmonds</p>
       </footer>
 
       <style>{`
-        html { scroll-behavior: smooth; }
-        .page-root { background: #070b17; color: #f5f6ff; font-family: Inter, system-ui, sans-serif; width: 100%; overflow-x: hidden; }
-        .hero { position: relative; min-height: 90vh; display: grid; place-items: center; overflow: hidden; width: 100%; }
-        .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #1a1038, #08101f 60%, #2a1038); background-size: cover; background-position: center; transform: scale(1.05); }
-        .overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(6,8,18,.35), rgba(2,5,12,.88)), radial-gradient(circle at 18% 20%, rgba(255, 62, 178, .35), transparent 45%), radial-gradient(circle at 80% 35%, rgba(46, 205, 255, .28), transparent 40%), radial-gradient(circle at 55% 80%, rgba(255, 175, 43, .2), transparent 30%); }
-        .rain { position:absolute; inset:0; opacity:.28; background: repeating-linear-gradient(102deg, rgba(188,231,255,.28) 0 1px, transparent 1px 13px), linear-gradient(180deg, transparent 0%, rgba(92, 175, 255, .18) 100%); }
-        .hero-content { position: relative; z-index: 2; width: 100%; max-width: 900px; padding: 2rem 1rem; text-align: center; }
-        .label { letter-spacing: .25em; color:#96f2ff; font-size:.78rem; margin-bottom:1rem; }
-        h1 { font-size: clamp(2.4rem, 8vw, 6rem); margin: 0; letter-spacing:.06em; }
-        .subheadline { margin-top:.8rem; font-size: clamp(1rem, 2.8vw, 1.35rem); color:#ffd08d; }
-        .intro, .section-text { max-width: 760px; margin: 1rem auto 0; color:#d4d8ef; line-height:1.65; }
-        .button-row { display:flex; flex-wrap:wrap; justify-content:center; gap:.75rem; margin-top:1.5rem; width:100%; }
-        .button-row a { text-decoration:none; color:#fff; padding:.75rem 1rem; border-radius:999px; border:1px solid rgba(147,223,255,.45); background: linear-gradient(120deg, rgba(255,81,194,.2), rgba(67,196,255,.22)); backdrop-filter: blur(6px); transition: transform .2s ease, box-shadow .2s ease; width: 100%; max-width: min(100%, 420px); text-align:center; }
-        .button-row a:hover { transform: translateY(-2px); box-shadow: 0 0 24px rgba(104, 193, 255, .35); }
-        .section { padding: 3.5rem 1rem; width: 100%; max-width: 1120px; margin: 0 auto; }
-        h2 { font-size: clamp(1.7rem, 5vw, 2.7rem); margin: 0 0 1.4rem; }
-        .grid { display:grid; gap:1rem; }
-        .five { grid-template-columns: 1fr; }
-        .three { grid-template-columns: 1fr; }
-        .glass-card, .character-card, .trailer-placeholder { border:1px solid rgba(173,225,255,.2); border-radius: 18px; background: linear-gradient(150deg, rgba(255,255,255,.09), rgba(255,255,255,.02)); backdrop-filter: blur(8px); box-shadow: 0 12px 38px rgba(0,0,0,.35); }
-        .glass-card { padding: 1.1rem; }
-        .glass-card h3 { margin:.2rem 0 .55rem; }
-        .glass-card p { margin:0; color:#c8cee9; }
-        .character-card { overflow:hidden; }
-        .character-card img, .img-placeholder { width:100%; max-width:100%; height:auto; aspect-ratio: 16/10; object-fit:cover; display:block; background: linear-gradient(135deg, rgba(59, 18, 97, .8), rgba(12, 35, 54, .9)); }
-        .img-placeholder { display:grid; place-items:center; color:#c5d0f2; font-size:.9rem; }
-        .card-copy { padding:1rem; }
-        .role { color:#72e6ff; margin:.2rem 0 .6rem; font-weight: 600; }
-        .media-wrap { margin-top:1.2rem; }
-        .trailer-video { width:100%; max-width:100%; height:auto; border-radius:20px; border:1px solid rgba(173,225,255,.3); background:#02040b; box-shadow:0 15px 40px rgba(0,0,0,.45); }
-        .trailer-placeholder { min-height:320px; display:grid; place-items:center; font-size:1.3rem; color:#ffe0aa; background: radial-gradient(circle at 50% 30%, rgba(255,131,216,.35), rgba(61,126,255,.2) 45%, rgba(6,9,20,.9)); }
-        .notice { margin-top: 1rem; color:#9de8ff; }
-        .chip-wrap { display:flex; flex-wrap:wrap; gap:.55rem; margin:1rem 0 1.1rem; }
-        .chip { border:1px solid rgba(117, 224, 255, .45); color:#dff8ff; font-size:.82rem; padding:.45rem .7rem; border-radius:999px; background:rgba(42, 84, 136, .2); }
-        .final-cta { text-align:center; display:flex; flex-direction:column; align-items:center; gap:.5rem; }
-        .experience-section { text-align: center; }
-        .experience-prompt {
-          margin: 0 0 .6rem;
-          font-size: clamp(.95rem, 2.4vw, 1.2rem);
-          letter-spacing: .04em;
-          color: #9de8ff;
-          text-shadow: 0 0 10px rgba(64, 219, 255, .7), 0 0 20px rgba(255, 91, 208, .4);
+        :root {
+          --bg: #03040b;
+          --navy: #070b1f;
+          --panel: rgba(11, 16, 42, .72);
+          --pink: #ff4fd8;
+          --purple: #8b5cff;
+          --blue: #27d8ff;
+          --text: #f7f8ff;
+          --muted: #c4cae6;
+          --line: rgba(115, 218, 255, .34);
         }
-        .experience-section .section-text { max-width: 760px; margin-top: .75rem; }
-        .experience-section .grid { margin-top: 1.35rem; }
-        .ai-pipeline-grid { margin-top: 1.35rem; }
-        .ai-pipeline-close { text-align: center; margin-top: 1.1rem; }
-        .footer { border-top:1px solid rgba(160,200,255,.22); text-align:center; padding:2rem 1rem 3rem; color:#b8bfdc; width:100%; max-width:100%; overflow-x:hidden; }
-        @media (min-width: 640px) {
-          .button-row a { width: auto; }
-          .section { padding: 4rem 1.25rem; }
-          .five { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-          .three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; background: var(--bg); }
+        body { margin: 0; }
+        .page-root {
+          min-height: 100vh;
+          overflow-x: hidden;
+          color: var(--text);
+          background:
+            radial-gradient(circle at 12% 8%, rgba(255, 79, 216, .22), transparent 34rem),
+            radial-gradient(circle at 88% 15%, rgba(39, 216, 255, .18), transparent 32rem),
+            linear-gradient(180deg, #02030a 0%, #070b1f 42%, #03040b 100%);
+          font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
-        @media (min-width: 1024px) {
-          .section { padding: 4.5rem 1.5rem; }
-          .five { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-          .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+        .hero {
+          position: relative;
+          min-height: 100svh;
+          display: grid;
+          place-items: center;
+          isolation: isolate;
+          padding: 7rem 1rem 5rem;
+          text-align: center;
         }
-        @media (min-width: 1280px) {
-          .five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+        .hero-image {
+          position: absolute;
+          inset: 0;
+          z-index: -3;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          filter: saturate(1.16) contrast(1.08) brightness(.72);
+        }
+        .hero-overlay {
+          position: absolute;
+          inset: 0;
+          z-index: -2;
+          background:
+            linear-gradient(180deg, rgba(2, 3, 10, .56) 0%, rgba(3, 4, 12, .62) 46%, rgba(3, 4, 11, .94) 100%),
+            radial-gradient(circle at 50% 44%, rgba(6, 8, 20, .12), rgba(0, 0, 0, .7) 72%),
+            radial-gradient(circle at 18% 30%, rgba(255, 79, 216, .35), transparent 36rem),
+            radial-gradient(circle at 82% 26%, rgba(39, 216, 255, .24), transparent 32rem);
+        }
+        .hero-scanlines {
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          opacity: .2;
+          background: repeating-linear-gradient(180deg, rgba(255,255,255,.12) 0 1px, transparent 1px 7px);
+          mix-blend-mode: screen;
+          pointer-events: none;
+        }
+        .hero-content {
+          width: min(100%, 980px);
+          margin: 0 auto;
+          padding: clamp(1.25rem, 4vw, 3rem);
+          border: 1px solid rgba(255, 255, 255, .12);
+          border-radius: clamp(1.5rem, 4vw, 3rem);
+          background: linear-gradient(180deg, rgba(3, 5, 16, .62), rgba(3, 5, 16, .28));
+          box-shadow: 0 0 55px rgba(39, 216, 255, .2), inset 0 0 38px rgba(255, 79, 216, .08);
+          backdrop-filter: blur(8px);
+        }
+        .eyebrow {
+          margin: 0 0 1rem;
+          color: #9ff1ff;
+          font-size: .76rem;
+          font-weight: 800;
+          letter-spacing: .26em;
+          line-height: 1.5;
+          text-transform: uppercase;
+          text-shadow: 0 0 18px rgba(39, 216, 255, .75);
+        }
+        h1, h2, h3, p, figure, blockquote { overflow-wrap: anywhere; }
+        h1 {
+          margin: 0;
+          font-size: clamp(3.15rem, 12vw, 8.4rem);
+          line-height: .88;
+          letter-spacing: .08em;
+          text-transform: uppercase;
+          text-shadow: 0 0 18px rgba(255, 79, 216, .72), 0 0 42px rgba(39, 216, 255, .55);
+        }
+        h2 {
+          margin: 0;
+          text-align: center;
+          font-size: clamp(2rem, 5.4vw, 4.35rem);
+          line-height: .96;
+          letter-spacing: .06em;
+          text-transform: uppercase;
+          text-shadow: 0 0 24px rgba(139, 92, 255, .45);
+        }
+        h3 {
+          margin: 0;
+          font-size: clamp(1rem, 2vw, 1.22rem);
+          letter-spacing: .15em;
+          text-transform: uppercase;
+        }
+        .hero-subheadline {
+          margin: 1rem auto 0;
+          color: #f9e7ff;
+          font-size: clamp(1.15rem, 3.2vw, 2rem);
+          letter-spacing: .18em;
+          text-transform: uppercase;
+        }
+        .hero-quote { margin: 1.6rem auto 0; }
+        .hero-quote blockquote,
+        .quote-section blockquote {
+          margin: 0;
+          color: #ffffff;
+          font-size: clamp(1.35rem, 3.5vw, 2.7rem);
+          font-weight: 800;
+          line-height: 1.1;
+          text-shadow: 0 0 20px rgba(255, 79, 216, .68);
+        }
+        figcaption {
+          margin-top: .65rem;
+          color: #a9efff;
+          font-size: clamp(.95rem, 2vw, 1.15rem);
+        }
+        .hero-copy,
+        .section-text {
+          max-width: 820px;
+          margin: 1.15rem auto 0;
+          color: var(--muted);
+          font-size: clamp(1rem, 1.8vw, 1.18rem);
+          line-height: 1.75;
+          text-align: center;
+        }
+        .strong { color: #ffffff; font-weight: 750; }
+
+        .button-row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: .9rem;
+          margin-top: 2rem;
+        }
+        .button {
+          display: inline-flex;
+          min-height: 3.15rem;
+          align-items: center;
+          justify-content: center;
+          padding: .9rem 1.25rem;
+          border-radius: 999px;
+          color: #ffffff;
+          font-size: .86rem;
+          font-weight: 900;
+          letter-spacing: .14em;
+          text-align: center;
+          text-decoration: none;
+          transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+        }
+        .button.primary {
+          border: 1px solid rgba(255, 134, 232, .8);
+          background: linear-gradient(135deg, rgba(255, 79, 216, .95), rgba(139, 92, 255, .88));
+          box-shadow: 0 0 24px rgba(255, 79, 216, .38), 0 0 48px rgba(139, 92, 255, .22);
+        }
+        .button.secondary {
+          border: 1px solid rgba(99, 229, 255, .74);
+          background: linear-gradient(135deg, rgba(5, 13, 35, .86), rgba(39, 216, 255, .18));
+          box-shadow: 0 0 24px rgba(39, 216, 255, .22);
+        }
+        .button:hover,
+        .button:focus-visible {
+          transform: translateY(-2px);
+          box-shadow: 0 0 34px rgba(39, 216, 255, .36), 0 0 55px rgba(255, 79, 216, .26);
+        }
+
+        .section {
+          width: min(100% - 2rem, 1180px);
+          margin: 0 auto;
+          padding: clamp(4.75rem, 9vw, 8rem) 0;
+          text-align: center;
+        }
+        .section.narrow { width: min(100% - 2rem, 980px); }
+        .section-card,
+        .glass-card,
+        .video-placeholder,
+        .character-card {
+          border: 1px solid var(--line);
+          background: linear-gradient(145deg, rgba(13, 19, 50, .82), rgba(8, 10, 27, .54));
+          box-shadow: 0 0 30px rgba(39, 216, 255, .13), inset 0 0 36px rgba(255, 79, 216, .06);
+          backdrop-filter: blur(10px);
+        }
+        .section-card {
+          padding: clamp(1.5rem, 5vw, 3.5rem);
+          border-radius: 2rem;
+          position: relative;
+          overflow: hidden;
+        }
+        .section-card::before {
+          content: "";
+          position: absolute;
+          inset: -2px;
+          z-index: -1;
+          background: radial-gradient(circle at 20% 10%, rgba(255, 79, 216, .24), transparent 30rem),
+            radial-gradient(circle at 85% 80%, rgba(39, 216, 255, .18), transparent 30rem);
+        }
+        .feature-card { max-width: 980px; margin: 0 auto; }
+        .grid {
+          display: grid;
+          gap: 1rem;
+          margin-top: 2rem;
+        }
+        .pillars-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .glass-card {
+          min-height: 12rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 1.35rem;
+          border-radius: 1.3rem;
+        }
+        .glass-card h3 { color: #ffffff; text-shadow: 0 0 16px rgba(39, 216, 255, .55); }
+        .glass-card p {
+          margin: .85rem 0 0;
+          color: var(--muted);
+          line-height: 1.6;
+        }
+        .glow-panel { max-width: 900px; margin: 0 auto; }
+        .mantra {
+          margin: 1.7rem auto 0;
+          color: #ffffff;
+          font-size: clamp(1.35rem, 3vw, 2.1rem);
+          font-weight: 900;
+          letter-spacing: .07em;
+          text-transform: uppercase;
+          text-shadow: 0 0 20px rgba(255, 79, 216, .64), 0 0 30px rgba(39, 216, 255, .4);
+        }
+        .chip-wrap {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: .75rem;
+          margin: 2rem auto 0;
+        }
+        .chip,
+        .theme-grid li {
+          border: 1px solid rgba(99, 229, 255, .52);
+          border-radius: 999px;
+          background: rgba(7, 14, 38, .72);
+          box-shadow: 0 0 18px rgba(39, 216, 255, .11);
+          color: #e9fbff;
+        }
+        .chip {
+          padding: .68rem .95rem;
+          font-size: .86rem;
+          font-weight: 800;
+          letter-spacing: .08em;
+        }
+        .small-heading {
+          margin-top: 1.7rem;
+          color: #ffffff;
+          font-weight: 800;
+        }
+        .theme-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: .7rem;
+          max-width: 900px;
+          margin: 1.35rem auto 0;
+          padding: 0;
+          list-style: none;
+        }
+        .theme-grid li {
+          padding: .62rem .9rem;
+          text-transform: capitalize;
+        }
+        .release {
+          margin: 1rem auto 0;
+          color: #ffb9ee;
+          font-size: clamp(1rem, 2.5vw, 1.35rem);
+          font-weight: 900;
+          letter-spacing: .12em;
+          text-align: center;
+          text-transform: uppercase;
+        }
+        .video-placeholder {
+          width: min(100%, 820px);
+          min-height: clamp(18rem, 45vw, 30rem);
+          display: grid;
+          place-items: center;
+          align-content: center;
+          gap: .8rem;
+          margin: 2.3rem auto 0;
+          border-radius: 2rem;
+          background:
+            linear-gradient(180deg, rgba(3, 5, 16, .4), rgba(3, 5, 16, .86)),
+            radial-gradient(circle at 50% 30%, rgba(255, 79, 216, .42), transparent 34%),
+            radial-gradient(circle at 50% 70%, rgba(39, 216, 255, .28), transparent 40%),
+            url('/diner.png');
+          background-size: cover;
+          background-position: center;
+          box-shadow: 0 0 42px rgba(39, 216, 255, .18), 0 0 72px rgba(255, 79, 216, .12);
+          text-align: center;
+        }
+        .video-placeholder span,
+        .video-placeholder em {
+          color: #a9efff;
+          font-style: normal;
+          font-weight: 900;
+          letter-spacing: .22em;
+          text-transform: uppercase;
+        }
+        .video-placeholder strong {
+          font-size: clamp(2rem, 6vw, 5rem);
+          line-height: .95;
+          letter-spacing: .1em;
+          text-shadow: 0 0 24px rgba(255, 79, 216, .7);
+        }
+        .diner-lines {
+          display: grid;
+          gap: .75rem;
+          max-width: 720px;
+          margin: 2rem auto;
+        }
+        .diner-lines p {
+          margin: 0;
+          color: #ffffff;
+          font-size: clamp(1.12rem, 2vw, 1.35rem);
+          font-weight: 800;
+          text-shadow: 0 0 16px rgba(39, 216, 255, .4);
+        }
+        .character-grid { grid-template-columns: 1fr; }
+        .character-card {
+          overflow: hidden;
+          border-radius: 1.35rem;
+        }
+        .character-card img {
+          display: block;
+          width: 100%;
+          aspect-ratio: 4 / 3;
+          object-fit: cover;
+          object-position: center top;
+          border-bottom: 1px solid rgba(99, 229, 255, .24);
+        }
+        .character-card h3 { padding: 1.1rem; }
+        .quote-section {
+          width: min(100% - 2rem, 1050px);
+          margin: 0 auto;
+          padding: clamp(4rem, 8vw, 7rem) 1rem;
+          text-align: center;
+        }
+        .quote-section figure {
+          margin: 0;
+          padding: clamp(2rem, 5vw, 4rem);
+          border-block: 1px solid rgba(255, 79, 216, .34);
+          background: radial-gradient(circle at center, rgba(139, 92, 255, .16), transparent 70%);
+        }
+        .footer {
+          padding: 2.5rem 1rem 3rem;
+          border-top: 1px solid rgba(99, 229, 255, .28);
+          color: var(--muted);
+          text-align: center;
+          background: rgba(1, 2, 8, .75);
+        }
+        .footer p { margin: .35rem 0; }
+        .footer p:first-child {
+          color: #ffffff;
+          font-weight: 900;
+          letter-spacing: .12em;
+          text-transform: uppercase;
+        }
+
+        @media (max-width: 560px) {
+          .hero { padding: 5.5rem 1rem 3.75rem; }
+          .hero-image { object-position: center top; }
+          .hero-content { border-radius: 1.35rem; }
+          .eyebrow { font-size: .68rem; letter-spacing: .18em; }
+          .hero-subheadline { letter-spacing: .1em; }
+          .button-row { width: 100%; }
+          .button { width: 100%; max-width: 24rem; }
+          .section { width: min(100% - 1.25rem, 1180px); }
+          .glass-card { min-height: 10rem; }
+        }
+
+        @media (min-width: 700px) {
+          .pillars-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+          .character-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+
+        @media (min-width: 1040px) {
+          .pillars-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          .glass-card { padding: 1.6rem; }
         }
       `}</style>
     </main>
