@@ -643,7 +643,7 @@ export default function Page() {
         }
         .pillars-grid,
         .awareness-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-        .awareness-grid { margin-top: 3rem; }
+        .awareness-grid { gap: 1.15rem; margin-top: 3rem; }
         .awareness-card {
           min-height: 9rem;
           display: grid;
@@ -653,13 +653,8 @@ export default function Page() {
           border-radius: 1.15rem;
           background: linear-gradient(145deg, rgba(13, 19, 50, .72), rgba(8, 10, 27, .5));
           box-shadow: 0 0 22px rgba(39, 216, 255, .11), inset 0 0 25px rgba(255, 79, 216, .05);
-          transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
-        }
-        .awareness-card:hover,
-        .awareness-card:focus-within {
-          transform: translateY(-5px);
-          border-color: rgba(255, 134, 232, .72);
-          box-shadow: 0 0 34px rgba(39, 216, 255, .22), 0 0 38px rgba(255, 79, 216, .17), inset 0 0 30px rgba(255, 79, 216, .09);
+          cursor: default;
+          text-align: center;
         }
         .awareness-card h3 { text-shadow: 0 0 16px rgba(39, 216, 255, .62), 0 0 20px rgba(255, 79, 216, .34); }
         .collaborators-card { max-width: 1040px; margin: 0 auto; }
