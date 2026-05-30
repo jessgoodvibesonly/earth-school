@@ -8,6 +8,39 @@ const platforms = [
   "AI Companion Systems",
 ];
 
+const awarenessFeatures = [
+  "PERCEPTION",
+  "IDENTITY",
+  "AWARENESS",
+  "CHOICE",
+  "ENVIRONMENT",
+  "RELATIONSHIPS",
+];
+
+const experienceThemes = [
+  "perception",
+  "awareness",
+  "identity",
+  "environment",
+  "habits",
+  "relationships",
+  "creativity",
+  "choice",
+];
+
+const collaboratorTypes = [
+  "Unreal Engine Developers",
+  "XR / VR Developers",
+  "AI Engineers",
+  "Game Designers",
+  "Musicians",
+  "Sound Designers",
+  "Artists",
+  "Researchers",
+  "Investors",
+  "Strategic Partners",
+];
+
 const pillars = [
   ["AWARENESS", "Notice more. Experience differently."],
   ["PERCEPTION", "Your filter changes how the world appears."],
@@ -37,6 +70,21 @@ const characters = [
   ["Maya", "/maya.png"],
 ];
 
+function FooterIcon({ name }: { name: "linkedin" | "youtube" | "email" | "website" }) {
+  const icons = {
+    linkedin: <path d="M6.5 8.5V18M6.5 5.8v.1M10.5 18v-5.3a3.2 3.2 0 0 1 6.4 0V18M10.5 8.5V18" />,
+    youtube: <path d="M21 12s0-3.2-.4-4.7a2.4 2.4 0 0 0-1.7-1.7C17.4 5.2 12 5.2 12 5.2s-5.4 0-6.9.4a2.4 2.4 0 0 0-1.7 1.7C3 8.8 3 12 3 12s0 3.2.4 4.7a2.4 2.4 0 0 0 1.7 1.7c1.5.4 6.9.4 6.9.4s5.4 0 6.9-.4a2.4 2.4 0 0 0 1.7-1.7C21 15.2 21 12 21 12Zm-10.8 3.1V8.9l5.2 3.1-5.2 3.1Z" />,
+    email: <path d="M3.5 5.5h17v13h-17zM4 6l8 6.5L20 6" />,
+    website: <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0c2.2-2.4 3.3-5.4 3.3-9S14.2 5.4 12 3c-2.2 2.4-3.3 5.4-3.3 9s1.1 6.6 3.3 9ZM3.5 12h17" />,
+  };
+
+  return (
+    <svg aria-hidden="true" className="footer-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6">
+      {icons[name]}
+    </svg>
+  );
+}
+
 export default function Page() {
   return (
     <main className="page-root">
@@ -56,15 +104,82 @@ export default function Page() {
             <blockquote>“Can you see your own face right now?”</blockquote>
             <figcaption>— Rev. Dr. Jessica Simmonds</figcaption>
           </figure>
-          <p className="hero-copy">
-            EARTH SCHOOL is a cross-platform cinematic game experience about awareness,
-            perception, identity, choice, and waking up inside the human experience.
+          <div className="hero-copy">
+            <p>EARTH SCHOOL is a cross-platform VR/XR experience where awareness shapes reality.</p>
+            <p>Players don&apos;t just play.</p>
+            <p className="hero-copy-beats">They observe.<br />They choose.<br />They reflect.</p>
+            <p>And the world responds.</p>
+          </div>
+          <p className="awareness-statement">
+            <span>AWARENESS IS THE INPUT.</span>
+            <span>REALITY IS THE INTERFACE.</span>
           </p>
           <div className="button-row" aria-label="Primary actions">
             <a className="button primary" href="#game">EXPLORE THE GAME</a>
             <a className="button secondary" href="#journey">STAY UPDATED</a>
           </div>
         </div>
+      </section>
+
+      <section id="game" className="section controller-section" aria-labelledby="controller-title">
+        <p className="eyebrow">a new way to play</p>
+        <h2 id="controller-title">WHAT IF AWARENESS WAS THE CONTROLLER?</h2>
+        <p className="section-text">
+          EARTH SCHOOL combines neuroscience, consciousness, storytelling, immersive technology,
+          and interactive gameplay.
+        </p>
+        <p className="section-text small-heading">The experience explores:</p>
+        <ul className="theme-grid experience-theme-grid">
+          {experienceThemes.map((theme) => (
+            <li key={theme}>{theme}</li>
+          ))}
+        </ul>
+        <div className="reflection-copy">
+          <p>Players evolve through observation, reflection, and action.</p>
+          <p>The goal is not simply to complete objectives.</p>
+          <p className="reflection-emphasis">The goal is to become aware.</p>
+        </div>
+        <div className="grid awareness-grid" aria-label="Core EARTH SCHOOL experience features">
+          {awarenessFeatures.map((feature) => (
+            <article className="awareness-card" key={feature}>
+              <h3>{feature}</h3>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="collaborators" className="section collaborators-section" aria-labelledby="collaborators-title">
+        <div className="section-card collaborators-card">
+          <p className="eyebrow">build the experience with us</p>
+          <h2 id="collaborators-title">LOOKING FOR COLLABORATORS</h2>
+          <p className="section-text">
+            EARTH SCHOOL is actively seeking collaborators who are excited about building something
+            that blends technology, storytelling, neuroscience, consciousness, and interactive experiences.
+          </p>
+          <p className="section-text small-heading">We would love to connect with:</p>
+          <ul className="collaborator-grid">
+            {collaboratorTypes.map((type) => (
+              <li key={type}>{type}</li>
+            ))}
+          </ul>
+          <div className="button-row">
+            <a className="button primary" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20collaboration" target="_blank" rel="noopener noreferrer">BECOME A COLLABORATOR</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section vision-section" aria-labelledby="vision-title">
+        <p className="eyebrow">project vision</p>
+        <h2 id="vision-title">A DIFFERENT KIND OF GAME</h2>
+        <div className="vision-questions">
+          <p>What if reality responded to awareness?</p>
+          <p>What if perception changed the world around you?</p>
+          <p>What if your environment shaped your experience more than motivation ever could?</p>
+        </div>
+        <p className="section-text">
+          EARTH SCHOOL explores these questions through a cinematic interactive experience designed
+          to challenge how players think about identity, consciousness, and the human experience.
+        </p>
       </section>
 
       <section id="platforms" className="section narrow" aria-labelledby="platforms-title">
@@ -97,7 +212,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="game" className="section" aria-labelledby="game-title">
+      <section className="section" aria-labelledby="game-title">
         <p className="eyebrow">awareness is the mechanic</p>
         <h2 id="game-title">THE GAME EXPERIENCE</h2>
         <div className="grid pillars-grid">
@@ -193,8 +308,8 @@ export default function Page() {
             music, worldbuilding, behind-the-scenes updates, and future immersive experiences.
           </p>
           <div className="button-row" aria-label="Community actions">
-            <a className="button primary" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20updates">STAY UPDATED</a>
-            <a className="button secondary" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20Synergy%20Call">JOIN THE SYNERGY CALL</a>
+            <a className="button primary" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20updates" target="_blank" rel="noopener noreferrer">STAY UPDATED</a>
+            <a className="button secondary" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20Synergy%20Call" target="_blank" rel="noopener noreferrer">JOIN THE SYNERGY CALL</a>
           </div>
         </div>
       </section>
@@ -209,6 +324,22 @@ export default function Page() {
       <footer className="footer">
         <p>EARTH SCHOOL • A Temporary Human Experience</p>
         <p>Created by Rev. Dr. Jessica Simmonds</p>
+        <nav className="footer-links" aria-label="EARTH SCHOOL links">
+          {/* TODO: Add the official EARTH SCHOOL LinkedIn URL when available. */}
+          <span className="footer-link is-pending" title="Official LinkedIn URL coming soon">
+            <FooterIcon name="linkedin" /> LinkedIn <em>Coming soon</em>
+          </span>
+          {/* TODO: Add the official EARTH SCHOOL YouTube URL when available. */}
+          <span className="footer-link is-pending" title="Official YouTube URL coming soon">
+            <FooterIcon name="youtube" /> YouTube <em>Coming soon</em>
+          </span>
+          <a className="footer-link" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20inquiry" target="_blank" rel="noopener noreferrer">
+            <FooterIcon name="email" /> Email Contact
+          </a>
+          <a className="footer-link" href="/">
+            <FooterIcon name="website" /> EARTH SCHOOL Website
+          </a>
+        </nav>
       </footer>
 
       <style>{`
@@ -342,7 +473,6 @@ export default function Page() {
           color: #a9efff;
           font-size: clamp(.95rem, 2vw, 1.15rem);
         }
-        .hero-copy,
         .section-text {
           max-width: 820px;
           margin: 1.15rem auto 0;
@@ -352,6 +482,32 @@ export default function Page() {
           text-align: center;
         }
         .strong { color: #ffffff; font-weight: 750; }
+        .hero-copy {
+          max-width: 760px;
+          margin: 1.65rem auto 0;
+          color: var(--muted);
+          font-size: clamp(1rem, 1.8vw, 1.16rem);
+          line-height: 1.65;
+          text-align: center;
+        }
+        .hero-copy p { margin: .55rem 0 0; }
+        .hero-copy p:first-child { margin-top: 0; }
+        .hero-copy-beats { color: #ffffff; font-weight: 750; letter-spacing: .08em; }
+        .awareness-statement {
+          display: grid;
+          gap: .2rem;
+          max-width: 700px;
+          margin: 1.7rem auto 0;
+          padding: 1rem 1.25rem;
+          border-block: 1px solid rgba(99, 229, 255, .46);
+          color: #ffffff;
+          font-size: clamp(1.05rem, 3vw, 1.72rem);
+          font-weight: 900;
+          letter-spacing: .15em;
+          line-height: 1.28;
+          text-align: center;
+          text-shadow: 0 0 18px rgba(255, 79, 216, .78), 0 0 28px rgba(39, 216, 255, .56);
+        }
 
         .button-row {
           display: flex;
@@ -399,6 +555,29 @@ export default function Page() {
           text-align: center;
         }
         .section.narrow { width: min(100% - 2rem, 980px); }
+        .controller-section { padding-top: clamp(5.75rem, 10vw, 9rem); }
+        .reflection-copy,
+        .vision-questions {
+          display: grid;
+          gap: .55rem;
+          max-width: 820px;
+          margin: 2rem auto 0;
+        }
+        .reflection-copy p,
+        .vision-questions p {
+          margin: 0;
+          color: #ffffff;
+          font-size: clamp(1.05rem, 2vw, 1.3rem);
+          line-height: 1.55;
+          text-align: center;
+        }
+        .reflection-emphasis {
+          color: #bff6ff !important;
+          font-weight: 900;
+          letter-spacing: .06em;
+          text-shadow: 0 0 18px rgba(39, 216, 255, .44);
+          text-transform: uppercase;
+        }
         .section-card,
         .glass-card,
         .video-placeholder,
@@ -428,7 +607,47 @@ export default function Page() {
           gap: 1rem;
           margin-top: 2rem;
         }
-        .pillars-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .pillars-grid,
+        .awareness-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .awareness-grid { margin-top: 3rem; }
+        .awareness-card {
+          min-height: 9rem;
+          display: grid;
+          place-items: center;
+          padding: 1rem;
+          border: 1px solid rgba(99, 229, 255, .38);
+          border-radius: 1.15rem;
+          background: linear-gradient(145deg, rgba(13, 19, 50, .72), rgba(8, 10, 27, .5));
+          box-shadow: 0 0 22px rgba(39, 216, 255, .11), inset 0 0 25px rgba(255, 79, 216, .05);
+          transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
+        }
+        .awareness-card:hover,
+        .awareness-card:focus-within {
+          transform: translateY(-5px);
+          border-color: rgba(255, 134, 232, .72);
+          box-shadow: 0 0 34px rgba(39, 216, 255, .22), 0 0 38px rgba(255, 79, 216, .17), inset 0 0 30px rgba(255, 79, 216, .09);
+        }
+        .awareness-card h3 { text-shadow: 0 0 16px rgba(39, 216, 255, .62), 0 0 20px rgba(255, 79, 216, .34); }
+        .collaborators-card { max-width: 1040px; margin: 0 auto; }
+        .collaborator-grid {
+          display: grid;
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+          gap: .7rem;
+          max-width: 850px;
+          margin: 1.4rem auto 0;
+          padding: 0;
+          list-style: none;
+        }
+        .collaborator-grid li {
+          padding: .68rem .85rem;
+          border: 1px solid rgba(99, 229, 255, .25);
+          border-radius: .75rem;
+          background: rgba(7, 14, 38, .48);
+          color: #e9fbff;
+          font-size: .94rem;
+          letter-spacing: .04em;
+        }
+        .vision-section { width: min(100% - 2rem, 980px); }
         .glass-card {
           min-height: 12rem;
           display: flex;
@@ -583,6 +802,42 @@ export default function Page() {
           background: rgba(1, 2, 8, .75);
         }
         .footer p { margin: .35rem 0; }
+        .footer-links {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: .75rem;
+          margin: 1.55rem auto 0;
+        }
+        .footer-link {
+          display: inline-flex;
+          align-items: center;
+          gap: .42rem;
+          padding: .62rem .76rem;
+          border: 1px solid rgba(99, 229, 255, .28);
+          border-radius: 999px;
+          color: #dffbff;
+          font-size: .78rem;
+          font-weight: 800;
+          letter-spacing: .06em;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: border-color .2s ease, box-shadow .2s ease, color .2s ease;
+        }
+        a.footer-link:hover,
+        a.footer-link:focus-visible {
+          border-color: rgba(255, 134, 232, .72);
+          box-shadow: 0 0 22px rgba(255, 79, 216, .18);
+          color: #ffffff;
+        }
+        .footer-link.is-pending { color: rgba(196, 202, 230, .72); }
+        .footer-link em {
+          color: rgba(196, 202, 230, .62);
+          font-size: .62rem;
+          font-style: normal;
+          letter-spacing: .08em;
+        }
+        .footer-icon { width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
         .footer p:first-child {
           color: #ffffff;
           font-weight: 900;
@@ -600,15 +855,20 @@ export default function Page() {
           .button { width: 100%; max-width: 24rem; }
           .section { width: min(100% - 1.25rem, 1180px); }
           .glass-card { min-height: 10rem; }
+          .footer-links { display: grid; }
+          .footer-link { justify-content: center; }
         }
 
         @media (min-width: 700px) {
-          .pillars-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+          .pillars-grid,
+          .awareness-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+          .collaborator-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
           .character-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
 
         @media (min-width: 1040px) {
-          .pillars-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          .pillars-grid,
+          .awareness-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
           .glass-card { padding: 1.6rem; }
         }
       `}</style>
