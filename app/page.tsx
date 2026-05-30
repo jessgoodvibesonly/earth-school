@@ -1,3 +1,21 @@
+const realityLayers = [
+  "Perception becomes the filter",
+  "Repeated choices rewire the experience",
+  "Awareness unlocks new layers of reality",
+  "The player can evolve, or devolve",
+  "The environment responds to attention, habits, and internal state",
+];
+
+const collaborationAreas = [
+  "VR/XR development",
+  "Unreal Engine and cinematic production",
+  "AI and adaptive gameplay systems",
+  "Neuroscience and consciousness research",
+  "Sound design and frequency-based audio",
+  "Meditation, hypnotherapy, and transformational education",
+  "Game publishing, funding, and strategic partnerships",
+];
+
 const platforms = [
   "PC",
   "Console",
@@ -49,20 +67,56 @@ export default function Page() {
         <div className="hero-overlay" />
         <div className="hero-scanlines" />
         <div className="hero-content">
-          <p className="eyebrow">EARTH SCHOOL • A Temporary Human Experience</p>
+          <p className="eyebrow">EARTH SCHOOL</p>
           <h1 id="hero-title">EARTH SCHOOL</h1>
           <p className="hero-subheadline">A Temporary Human Experience</p>
-          <figure className="hero-quote">
-            <blockquote>“Can you see your own face right now?”</blockquote>
-            <figcaption>— Rev. Dr. Jessica Simmonds</figcaption>
-          </figure>
+          <p className="hero-question">What if awareness was the controller?</p>
+          <p className="hero-mantra">Awareness is the input. <span>Reality is the interface.</span></p>
           <p className="hero-copy">
-            EARTH SCHOOL is a cross-platform cinematic game experience about awareness,
-            perception, identity, choice, and waking up inside the human experience.
+            EARTH SCHOOL is a cross-platform VR/XR experience where awareness shapes reality.
+          </p>
+          <div className="player-rhythm" aria-label="How players experience EARTH SCHOOL">
+            <p>Players don’t just play.</p>
+            <p>They observe. <span>They choose.</span> They reflect.</p>
+            <p>And the world responds.</p>
+          </div>
+          <p className="science-line">Neuroscience + consciousness meet gameplay.</p>
+          <ul className="reality-list">
+            {realityLayers.map((layer) => (
+              <li key={layer}>{layer}</li>
+            ))}
+          </ul>
+          <p className="hero-closing">
+            This is not just entertainment. It is an immersive, reflective, transformational
+            experience exploring how perception creates reality and how awareness changes the world around you.
           </p>
           <div className="button-row" aria-label="Primary actions">
-            <a className="button primary" href="#game">EXPLORE THE GAME</a>
-            <a className="button secondary" href="#journey">STAY UPDATED</a>
+            <a className="button primary" href="#collaborate">COLLABORATE WITH EARTH SCHOOL</a>
+            <a className="button secondary" href="#game">EXPLORE THE EXPERIENCE</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="collaborate" className="section collaboration-section" aria-labelledby="collaborate-title">
+        <div className="section-card collaboration-card">
+          <p className="eyebrow">an open invitation</p>
+          <h2 id="collaborate-title">WE ARE CURRENTLY LOOKING FOR ALIGNED COLLABORATORS.</h2>
+          <p className="section-text strong">
+            EARTH SCHOOL is seeking thoughtful conversations and potential collaborators in:
+          </p>
+          <ul className="collaboration-list">
+            {collaborationAreas.map((area) => (
+              <li key={area}>{area}</li>
+            ))}
+          </ul>
+          <p className="collaboration-close">If this project resonates with you, we would love to connect.</p>
+          <div className="button-row">
+            <a
+              className="button primary"
+              href="mailto:hello@aspiretour.com?subject=Collaborate%20With%20EARTH%20SCHOOL"
+            >
+              COLLABORATE WITH EARTH SCHOOL
+            </a>
           </div>
         </div>
       </section>
@@ -277,7 +331,7 @@ export default function Page() {
           pointer-events: none;
         }
         .hero-content {
-          width: min(100%, 980px);
+          width: min(100%, 1040px);
           margin: 0 auto;
           padding: clamp(1.25rem, 4vw, 3rem);
           border: 1px solid rgba(255, 255, 255, .12);
@@ -327,8 +381,28 @@ export default function Page() {
           letter-spacing: .18em;
           text-transform: uppercase;
         }
-        .hero-quote { margin: 1.6rem auto 0; }
-        .hero-quote blockquote,
+        .hero-question {
+          margin: 1.8rem auto 0;
+          color: #ffffff;
+          font-size: clamp(1.45rem, 3.8vw, 2.65rem);
+          font-weight: 850;
+          line-height: 1.08;
+          text-shadow: 0 0 22px rgba(255, 79, 216, .62);
+        }
+        .hero-mantra {
+          margin: 1rem auto 0;
+          color: #ffb9ee;
+          font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+          font-weight: 900;
+          letter-spacing: .08em;
+          line-height: 1.35;
+          text-transform: uppercase;
+          text-shadow: 0 0 18px rgba(255, 79, 216, .78);
+        }
+        .hero-mantra span {
+          color: #9ff1ff;
+          text-shadow: 0 0 18px rgba(39, 216, 255, .82);
+        }
         .quote-section blockquote {
           margin: 0;
           color: #ffffff;
@@ -352,6 +426,60 @@ export default function Page() {
           text-align: center;
         }
         .strong { color: #ffffff; font-weight: 750; }
+        .player-rhythm {
+          margin: 1.35rem auto 0;
+          color: #ffffff;
+          font-size: clamp(1.02rem, 2vw, 1.22rem);
+          font-weight: 800;
+          letter-spacing: .04em;
+          line-height: 1.55;
+        }
+        .player-rhythm p { margin: 0; }
+        .player-rhythm span { color: #ffb9ee; }
+        .science-line {
+          margin: 1.35rem auto 0;
+          color: #9ff1ff;
+          font-size: clamp(1rem, 2vw, 1.22rem);
+          font-weight: 900;
+          letter-spacing: .12em;
+          line-height: 1.4;
+          text-transform: uppercase;
+          text-shadow: 0 0 16px rgba(39, 216, 255, .65);
+        }
+        .reality-list,
+        .collaboration-list {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: .58rem 1.2rem;
+          max-width: 900px;
+          margin: 1.3rem auto 0;
+          padding: 0;
+          list-style: none;
+          text-align: left;
+        }
+        .reality-list li,
+        .collaboration-list li {
+          position: relative;
+          padding-left: 1.15rem;
+          color: #e8ecff;
+          font-size: clamp(.9rem, 1.45vw, 1rem);
+          line-height: 1.5;
+        }
+        .reality-list li::before,
+        .collaboration-list li::before {
+          content: "•";
+          position: absolute;
+          left: 0;
+          color: #ff70df;
+          text-shadow: 0 0 12px rgba(255, 79, 216, .92);
+        }
+        .hero-closing {
+          max-width: 860px;
+          margin: 1.4rem auto 0;
+          color: #cbd3ef;
+          font-size: clamp(.92rem, 1.45vw, 1.02rem);
+          line-height: 1.65;
+        }
 
         .button-row {
           display: flex;
@@ -399,6 +527,22 @@ export default function Page() {
           text-align: center;
         }
         .section.narrow { width: min(100% - 2rem, 980px); }
+        .collaboration-section { padding-top: clamp(4rem, 7vw, 6.5rem); }
+        .collaboration-card {
+          max-width: 1040px;
+          margin: 0 auto;
+          border-color: rgba(255, 112, 223, .46);
+          box-shadow: 0 0 38px rgba(255, 79, 216, .15), inset 0 0 40px rgba(39, 216, 255, .07);
+        }
+        .collaboration-card h2 { font-size: clamp(1.8rem, 4.6vw, 3.6rem); }
+        .collaboration-list { max-width: 850px; margin-top: 1.7rem; }
+        .collaboration-close {
+          margin: 1.8rem auto 0;
+          color: #ffffff;
+          font-size: clamp(1.05rem, 2vw, 1.3rem);
+          font-weight: 800;
+          line-height: 1.5;
+        }
         .section-card,
         .glass-card,
         .video-placeholder,
@@ -596,6 +740,9 @@ export default function Page() {
           .hero-content { border-radius: 1.35rem; }
           .eyebrow { font-size: .68rem; letter-spacing: .18em; }
           .hero-subheadline { letter-spacing: .1em; }
+          .reality-list,
+          .collaboration-list { grid-template-columns: 1fr; gap: .48rem; }
+          .hero-closing { line-height: 1.55; }
           .button-row { width: 100%; }
           .button { width: 100%; max-width: 24rem; }
           .section { width: min(100% - 1.25rem, 1180px); }
