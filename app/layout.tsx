@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 export const metadata = {
   title: "EARTH SCHOOL • A Temporary Human Experience",
   description:
-    "A cross-platform cinematic game and immersive education experience exploring awareness, perception, identity, choice, and the temporary human experience.",
+    "A cross-platform VR/XR experience where awareness shapes reality through perception, identity, reflection, and choice.",
 };
 
 export default function RootLayout({
