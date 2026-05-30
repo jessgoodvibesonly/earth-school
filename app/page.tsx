@@ -114,10 +114,6 @@ export default function Page() {
             <span>AWARENESS IS THE INPUT.</span>
             <span>REALITY IS THE INTERFACE.</span>
           </p>
-          <div className="button-row" aria-label="Primary actions">
-            <a className="button primary" href="#game">EXPLORE THE GAME</a>
-            <a className="button secondary" href="#journey">STAY UPDATED</a>
-          </div>
         </div>
       </section>
 
