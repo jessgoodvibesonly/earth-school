@@ -95,7 +95,7 @@ export default function Page() {
         <div className="hero-overlay" />
         <div className="hero-scanlines" />
         <div className="hero-content">
-          <p className="eyebrow">EARTH SCHOOL • A Temporary Human Experience</p>
+          <p className="eyebrow hero-eyebrow">WHERE AWARENESS SHAPES REALITY</p>
           <h1 id="hero-title">EARTH SCHOOL</h1>
           <p className="hero-subheadline">A Temporary Human Experience</p>
           <figure className="hero-quote">
@@ -460,6 +460,15 @@ export default function Page() {
           line-height: 1.5;
           text-transform: uppercase;
           text-shadow: 0 0 18px rgba(39, 216, 255, .75);
+        }
+        .hero-eyebrow {
+          max-width: 100%;
+          margin-inline: auto;
+          color: rgba(255, 255, 255, .9);
+          font-size: clamp(.58rem, 1.6vw, .76rem);
+          letter-spacing: clamp(.2em, .7vw, .34em);
+          text-align: center;
+          text-shadow: 0 0 10px rgba(255, 255, 255, .32);
         }
         h1, h2, h3, p, figure, blockquote { overflow-wrap: anywhere; }
         h1 {
@@ -962,6 +971,7 @@ export default function Page() {
           .hero-image { object-position: center top; }
           .hero-content { border-radius: 1.35rem; }
           .eyebrow { font-size: .68rem; letter-spacing: .18em; }
+          .hero-eyebrow { font-size: clamp(.56rem, 2.55vw, .68rem); letter-spacing: .2em; }
           .hero-subheadline { letter-spacing: .1em; }
           .section { width: min(100% - 1.25rem, 1180px); }
           .glass-card { min-height: 10rem; }
