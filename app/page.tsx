@@ -308,8 +308,40 @@ export default function Page() {
             music, worldbuilding, behind-the-scenes updates, and future immersive experiences.
           </p>
           <div className="button-row" aria-label="Community actions">
-            <a className="button primary" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20updates" target="_blank" rel="noopener noreferrer">STAY UPDATED</a>
-            <a className="button secondary" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20Synergy%20Call" target="_blank" rel="noopener noreferrer">JOIN THE SYNERGY CALL</a>
+            {/* TODO: Replace with the EARTH SCHOOL Updates Google Form URL when available. */}
+            <span className="button primary is-pending" aria-disabled="true" title="EARTH SCHOOL updates form coming soon">STAY UPDATED</span>
+            <a className="button secondary" href="https://forms.gle/K69a3SocVbaKEbtM9" target="_blank" rel="noopener noreferrer">BECOME A COLLABORATOR</a>
+          </div>
+
+          <div className="creator-section" aria-labelledby="creator-title">
+            <div className="creator-portrait" aria-hidden="true">
+              <span>JS</span>
+            </div>
+            <p className="eyebrow">the vision behind the experience</p>
+            <h2 id="creator-title">MEET THE CREATOR</h2>
+            <p className="creator-name">Rev. Dr. Jessica Simmonds</p>
+            <div className="creator-copy">
+              <p>
+                EARTH SCHOOL was created by Rev. Dr. Jessica Simmonds, an entrepreneur, published
+                author, clinical hypnotherapist, spiritual life coach, educator, artist, speaker,
+                and founder of multiple ventures focused on human potential, creativity,
+                consciousness, and transformation.
+              </p>
+              <p>
+                For decades, Jessica has explored the intersection of neuroscience, awareness,
+                spirituality, psychology, immersive technology, and personal growth.
+              </p>
+              <p>
+                EARTH SCHOOL is the culmination of those explorations — a cross-platform experience
+                designed to challenge how we think about perception, identity, reality, and the
+                human experience itself.
+              </p>
+            </div>
+            <div className="button-row" aria-label="Creator links">
+              <a className="button primary" href="https://jessgoodvibesonly.vercel.app" target="_blank" rel="noopener noreferrer">VISIT JESSGOODVIBESONLY</a>
+              {/* TODO: Replace with Jessica Simmonds' LinkedIn URL when available. */}
+              <span className="button secondary is-pending" aria-disabled="true" title="Jessica Simmonds' LinkedIn URL coming soon">CONNECT ON LINKEDIN</span>
+            </div>
           </div>
         </div>
       </section>
@@ -547,6 +579,12 @@ export default function Page() {
           transform: translateY(-2px);
           box-shadow: 0 0 34px rgba(39, 216, 255, .36), 0 0 55px rgba(255, 79, 216, .26);
         }
+        .button.is-pending {
+          cursor: not-allowed;
+          opacity: .62;
+          filter: saturate(.72);
+        }
+        .button.is-pending:hover { transform: none; }
 
         .section {
           width: min(100% - 2rem, 1180px);
@@ -782,6 +820,63 @@ export default function Page() {
           border-bottom: 1px solid rgba(99, 229, 255, .24);
         }
         .character-card h3 { padding: 1.1rem; }
+        .creator-section {
+          position: relative;
+          margin-top: clamp(3rem, 7vw, 5rem);
+          padding-top: clamp(3rem, 7vw, 5rem);
+          border-top: 1px solid rgba(99, 229, 255, .24);
+        }
+        .creator-section::before {
+          content: "";
+          position: absolute;
+          top: -1px;
+          left: 50%;
+          width: min(72%, 34rem);
+          height: 1px;
+          transform: translateX(-50%);
+          background: linear-gradient(90deg, transparent, rgba(255, 134, 232, .8), rgba(99, 229, 255, .8), transparent);
+          box-shadow: 0 0 22px rgba(39, 216, 255, .42);
+        }
+        .creator-portrait {
+          width: clamp(5.5rem, 13vw, 7.5rem);
+          aspect-ratio: 1;
+          display: grid;
+          place-items: center;
+          margin: 0 auto 1.5rem;
+          border: 1px solid rgba(255, 134, 232, .72);
+          border-radius: 50%;
+          background: radial-gradient(circle at 35% 30%, rgba(255, 134, 232, .28), rgba(13, 19, 50, .92) 55%, rgba(5, 13, 35, .96));
+          box-shadow: 0 0 24px rgba(255, 79, 216, .28), 0 0 46px rgba(39, 216, 255, .2), inset 0 0 24px rgba(139, 92, 255, .26);
+        }
+        .creator-portrait span {
+          color: #ffffff;
+          font-size: clamp(1.3rem, 4vw, 2rem);
+          font-weight: 900;
+          letter-spacing: .14em;
+          text-indent: .14em;
+          text-shadow: 0 0 16px rgba(255, 79, 216, .82), 0 0 22px rgba(39, 216, 255, .58);
+        }
+        .creator-name {
+          margin: 1rem auto 0;
+          color: #bff6ff;
+          font-size: clamp(1.12rem, 2.5vw, 1.5rem);
+          font-weight: 800;
+          letter-spacing: .08em;
+          text-shadow: 0 0 18px rgba(39, 216, 255, .42);
+        }
+        .creator-copy {
+          display: grid;
+          gap: 1rem;
+          max-width: 880px;
+          margin: 1.5rem auto 0;
+        }
+        .creator-copy p {
+          margin: 0;
+          color: var(--muted);
+          font-size: clamp(1rem, 1.8vw, 1.16rem);
+          line-height: 1.75;
+        }
+
         .quote-section {
           width: min(100% - 2rem, 1050px);
           margin: 0 auto;
