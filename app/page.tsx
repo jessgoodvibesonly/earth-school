@@ -346,6 +346,19 @@ export default function Page() {
               <FooterIcon name="website" /> A Spiritual Warrior&apos;s Path
             </a>
           </nav>
+          <div className="project-cta">
+            <a
+              className="journey-button"
+              href="https://forms.gle/K69a3SocVbaKEbtM9"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              JOIN THE JOURNEY
+            </a>
+            <p className="journey-note">
+              Join fellow creators, developers, researchers, artists, and explorers helping shape EARTH SCHOOL.
+            </p>
+          </div>
         </section>
       </footer>
 
@@ -815,7 +828,7 @@ export default function Page() {
           background: radial-gradient(circle at center, rgba(139, 92, 255, .16), transparent 70%);
         }
         .footer {
-          padding: 2.5rem 1rem 3rem;
+          padding: 2.5rem 1rem 4.5rem;
           border-top: 1px solid rgba(99, 229, 255, .28);
           color: var(--muted);
           text-align: center;
@@ -855,6 +868,40 @@ export default function Page() {
           color: #ffb4ef;
         }
         .footer-icon { width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
+        .project-cta { margin-top: 2.5rem; }
+        .journey-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 3.25rem;
+          padding: .9rem 1.65rem;
+          border: 1px solid rgba(255, 134, 232, .88);
+          border-radius: 999px;
+          background: linear-gradient(135deg, rgba(255, 79, 216, .24), rgba(139, 92, 255, .32));
+          box-shadow: 0 0 18px rgba(255, 79, 216, .36), 0 0 34px rgba(139, 92, 255, .28), inset 0 0 18px rgba(255, 255, 255, .08);
+          color: #ffffff;
+          font-size: .88rem;
+          font-weight: 900;
+          letter-spacing: .16em;
+          text-decoration: none;
+          text-shadow: 0 0 12px rgba(255, 79, 216, .82);
+          transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease, background .22s ease;
+        }
+        .journey-button:hover,
+        .journey-button:focus-visible {
+          border-color: rgba(255, 189, 243, 1);
+          background: linear-gradient(135deg, rgba(255, 79, 216, .38), rgba(139, 92, 255, .46));
+          box-shadow: 0 0 24px rgba(255, 79, 216, .54), 0 0 46px rgba(139, 92, 255, .38), inset 0 0 20px rgba(255, 255, 255, .1);
+          transform: translateY(-3px);
+        }
+        .journey-button:focus-visible { outline: 2px solid #bff6ff; outline-offset: 4px; }
+        .journey-note {
+          max-width: 680px;
+          margin: 1rem auto 0 !important;
+          color: var(--muted);
+          font-size: .88rem;
+          line-height: 1.6;
+        }
         .footer p:first-child {
           color: #ffffff;
           font-weight: 900;
@@ -872,6 +919,8 @@ export default function Page() {
           .glass-card { min-height: 10rem; }
           .footer-links { display: grid; }
           .footer-link { justify-content: center; }
+          .journey-button { width: min(100%, 20rem); padding-inline: 1rem; }
+          .journey-note { max-width: 27rem; }
         }
 
         @media (min-width: 700px) {
