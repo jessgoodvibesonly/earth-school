@@ -70,11 +70,9 @@ const characters = [
   ["Maya", "/maya.png"],
 ];
 
-function FooterIcon({ name }: { name: "linkedin" | "youtube" | "email" | "website" }) {
+function FooterIcon({ name }: { name: "linkedin" | "website" }) {
   const icons = {
     linkedin: <path d="M6.5 8.5V18M6.5 5.8v.1M10.5 18v-5.3a3.2 3.2 0 0 1 6.4 0V18M10.5 8.5V18" />,
-    youtube: <path d="M21 12s0-3.2-.4-4.7a2.4 2.4 0 0 0-1.7-1.7C17.4 5.2 12 5.2 12 5.2s-5.4 0-6.9.4a2.4 2.4 0 0 0-1.7 1.7C3 8.8 3 12 3 12s0 3.2.4 4.7a2.4 2.4 0 0 0 1.7 1.7c1.5.4 6.9.4 6.9.4s5.4 0 6.9-.4a2.4 2.4 0 0 0 1.7-1.7C21 15.2 21 12 21 12Zm-10.8 3.1V8.9l5.2 3.1-5.2 3.1Z" />,
-    email: <path d="M3.5 5.5h17v13h-17zM4 6l8 6.5L20 6" />,
     website: <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0c2.2-2.4 3.3-5.4 3.3-9S14.2 5.4 12 3c-2.2 2.4-3.3 5.4-3.3 9s1.1 6.6 3.3 9ZM3.5 12h17" />,
   };
 
@@ -158,9 +156,6 @@ export default function Page() {
               <li key={type}>{type}</li>
             ))}
           </ul>
-          <div className="button-row">
-            <a className="button primary" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20collaboration" target="_blank" rel="noopener noreferrer">BECOME A COLLABORATOR</a>
-          </div>
         </div>
       </section>
 
@@ -303,12 +298,6 @@ export default function Page() {
             Follow the development of EARTH SCHOOL, the pre-rendered cinematic, character reveals,
             music, worldbuilding, behind-the-scenes updates, and future immersive experiences.
           </p>
-          <div className="button-row" aria-label="Community actions">
-            {/* TODO: Replace with the EARTH SCHOOL Updates Google Form URL when available. */}
-            <span className="button primary is-pending" aria-disabled="true" title="EARTH SCHOOL updates form coming soon">STAY UPDATED</span>
-            <a className="button secondary" href="https://forms.gle/K69a3SocVbaKEbtM9" target="_blank" rel="noopener noreferrer">BECOME A COLLABORATOR</a>
-          </div>
-
           <div className="creator-section" aria-labelledby="creator-title">
             <div className="creator-portrait" aria-hidden="true">
               <span>JS</span>
@@ -333,11 +322,6 @@ export default function Page() {
                 human experience itself.
               </p>
             </div>
-            <div className="button-row" aria-label="Creator links">
-              <a className="button primary" href="https://jessgoodvibesonly.vercel.app" target="_blank" rel="noopener noreferrer">VISIT JESSGOODVIBESONLY</a>
-              {/* TODO: Replace with Jessica Simmonds' LinkedIn URL when available. */}
-              <span className="button secondary is-pending" aria-disabled="true" title="Jessica Simmonds' LinkedIn URL coming soon">CONNECT ON LINKEDIN</span>
-            </div>
           </div>
         </div>
       </section>
@@ -352,22 +336,17 @@ export default function Page() {
       <footer className="footer">
         <p>EARTH SCHOOL • A Temporary Human Experience</p>
         <p>Created by Rev. Dr. Jessica Simmonds</p>
-        <nav className="footer-links" aria-label="EARTH SCHOOL links">
-          {/* TODO: Add the official EARTH SCHOOL LinkedIn URL when available. */}
-          <span className="footer-link is-pending" title="Official LinkedIn URL coming soon">
-            <FooterIcon name="linkedin" /> LinkedIn <em>Coming soon</em>
-          </span>
-          {/* TODO: Add the official EARTH SCHOOL YouTube URL when available. */}
-          <span className="footer-link is-pending" title="Official YouTube URL coming soon">
-            <FooterIcon name="youtube" /> YouTube <em>Coming soon</em>
-          </span>
-          <a className="footer-link" href="mailto:hello@aspiretour.com?subject=EARTH%20SCHOOL%20inquiry" target="_blank" rel="noopener noreferrer">
-            <FooterIcon name="email" /> Email Contact
-          </a>
-          <a className="footer-link" href="/">
-            <FooterIcon name="website" /> EARTH SCHOOL Website
-          </a>
-        </nav>
+        <section className="project-connect" aria-labelledby="project-connect-title">
+          <h2 id="project-connect-title">CONNECT WITH THE PROJECT</h2>
+          <nav className="footer-links" aria-label="Verified project links">
+            <a className="footer-link" href="https://ca.linkedin.com/in/jessica-simmonds-aspire4" target="_blank" rel="noopener noreferrer">
+              <FooterIcon name="linkedin" /> LinkedIn (Jessica Simmonds)
+            </a>
+            <a className="footer-link" href="https://www.aspiritualwarriorspath.com" target="_blank" rel="noopener noreferrer">
+              <FooterIcon name="website" /> A Spiritual Warrior&apos;s Path
+            </a>
+          </nav>
+        </section>
       </footer>
 
       <style>{`
@@ -536,51 +515,6 @@ export default function Page() {
           text-align: center;
           text-shadow: 0 0 18px rgba(255, 79, 216, .78), 0 0 28px rgba(39, 216, 255, .56);
         }
-
-        .button-row {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          gap: .9rem;
-          margin-top: 2rem;
-        }
-        .button {
-          display: inline-flex;
-          min-height: 3.15rem;
-          align-items: center;
-          justify-content: center;
-          padding: .9rem 1.25rem;
-          border-radius: 999px;
-          color: #ffffff;
-          font-size: .86rem;
-          font-weight: 900;
-          letter-spacing: .14em;
-          text-align: center;
-          text-decoration: none;
-          transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-        }
-        .button.primary {
-          border: 1px solid rgba(255, 134, 232, .8);
-          background: linear-gradient(135deg, rgba(255, 79, 216, .95), rgba(139, 92, 255, .88));
-          box-shadow: 0 0 24px rgba(255, 79, 216, .38), 0 0 48px rgba(139, 92, 255, .22);
-        }
-        .button.secondary {
-          border: 1px solid rgba(99, 229, 255, .74);
-          background: linear-gradient(135deg, rgba(5, 13, 35, .86), rgba(39, 216, 255, .18));
-          box-shadow: 0 0 24px rgba(39, 216, 255, .22);
-        }
-        .button:hover,
-        .button:focus-visible {
-          transform: translateY(-2px);
-          box-shadow: 0 0 34px rgba(39, 216, 255, .36), 0 0 55px rgba(255, 79, 216, .26);
-        }
-        .button.is-pending {
-          cursor: not-allowed;
-          opacity: .62;
-          filter: saturate(.72);
-        }
-        .button.is-pending:hover { transform: none; }
 
         .section {
           width: min(100% - 2rem, 1180px);
@@ -888,6 +822,14 @@ export default function Page() {
           background: rgba(1, 2, 8, .75);
         }
         .footer p { margin: .35rem 0; }
+        .project-connect { margin-top: 1.75rem; }
+        .project-connect h2 {
+          margin: 0;
+          color: #ffffff;
+          font-size: clamp(1rem, 2.4vw, 1.25rem);
+          letter-spacing: .14em;
+          text-transform: uppercase;
+        }
         .footer-links {
           display: flex;
           flex-wrap: wrap;
@@ -899,29 +841,18 @@ export default function Page() {
           display: inline-flex;
           align-items: center;
           gap: .42rem;
-          padding: .62rem .76rem;
-          border: 1px solid rgba(99, 229, 255, .28);
-          border-radius: 999px;
+          padding: .42rem .18rem;
           color: #dffbff;
           font-size: .78rem;
           font-weight: 800;
           letter-spacing: .06em;
           text-decoration: none;
           text-transform: uppercase;
-          transition: border-color .2s ease, box-shadow .2s ease, color .2s ease;
+          transition: color .2s ease;
         }
         a.footer-link:hover,
         a.footer-link:focus-visible {
-          border-color: rgba(255, 134, 232, .72);
-          box-shadow: 0 0 22px rgba(255, 79, 216, .18);
-          color: #ffffff;
-        }
-        .footer-link.is-pending { color: rgba(196, 202, 230, .72); }
-        .footer-link em {
-          color: rgba(196, 202, 230, .62);
-          font-size: .62rem;
-          font-style: normal;
-          letter-spacing: .08em;
+          color: #ffb4ef;
         }
         .footer-icon { width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
         .footer p:first-child {
@@ -937,8 +868,6 @@ export default function Page() {
           .hero-content { border-radius: 1.35rem; }
           .eyebrow { font-size: .68rem; letter-spacing: .18em; }
           .hero-subheadline { letter-spacing: .1em; }
-          .button-row { width: 100%; }
-          .button { width: 100%; max-width: 24rem; }
           .section { width: min(100% - 1.25rem, 1180px); }
           .glass-card { min-height: 10rem; }
           .footer-links { display: grid; }
