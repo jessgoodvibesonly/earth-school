@@ -299,9 +299,23 @@ export default function Page() {
             music, worldbuilding, behind-the-scenes updates, and future immersive experiences.
           </p>
           <div className="creator-section" aria-labelledby="creator-title">
-            <div className="creator-portrait" aria-hidden="true">
-              <span>JS</span>
-            </div>
+            <a
+              className="creator-portrait"
+              href="https://jessgoodvibesonly.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Jessica Simmonds at JessGoodVibesOnly (opens in a new tab)"
+            >
+              <span>JESS</span>
+            </a>
+            <a
+              className="creator-profile-link"
+              href="https://jessgoodvibesonly.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              VISIT JESSGOODVIBESONLY →
+            </a>
             <p className="eyebrow">the vision behind the experience</p>
             <h2 id="creator-title">MEET THE CREATOR</h2>
             <p className="creator-name">Rev. Dr. Jessica Simmonds</p>
@@ -780,11 +794,24 @@ export default function Page() {
           aspect-ratio: 1;
           display: grid;
           place-items: center;
-          margin: 0 auto 1.5rem;
+          margin: 0 auto .85rem;
           border: 1px solid rgba(255, 134, 232, .72);
           border-radius: 50%;
           background: radial-gradient(circle at 35% 30%, rgba(255, 134, 232, .28), rgba(13, 19, 50, .92) 55%, rgba(5, 13, 35, .96));
           box-shadow: 0 0 24px rgba(255, 79, 216, .28), 0 0 46px rgba(39, 216, 255, .2), inset 0 0 24px rgba(139, 92, 255, .26);
+          cursor: pointer;
+          text-decoration: none;
+          transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+        }
+        .creator-portrait:hover,
+        .creator-portrait:focus-visible {
+          border-color: rgba(255, 189, 243, .94);
+          box-shadow: 0 0 30px rgba(255, 79, 216, .46), 0 0 58px rgba(39, 216, 255, .3), inset 0 0 28px rgba(139, 92, 255, .34);
+          transform: scale(1.04);
+        }
+        .creator-portrait:focus-visible {
+          outline: 2px solid #bff6ff;
+          outline-offset: 5px;
         }
         .creator-portrait span {
           color: #ffffff;
@@ -793,6 +820,27 @@ export default function Page() {
           letter-spacing: .14em;
           text-indent: .14em;
           text-shadow: 0 0 16px rgba(255, 79, 216, .82), 0 0 22px rgba(39, 216, 255, .58);
+        }
+        .creator-profile-link {
+          display: inline-block;
+          margin: 0 auto 1.5rem;
+          color: #dffbff;
+          font-size: clamp(.72rem, 1.5vw, .86rem);
+          font-weight: 900;
+          letter-spacing: .12em;
+          text-decoration: none;
+          text-shadow: 0 0 14px rgba(39, 216, 255, .56);
+          transition: color .2s ease, text-shadow .2s ease, transform .2s ease;
+        }
+        .creator-profile-link:hover,
+        .creator-profile-link:focus-visible {
+          color: #ffb4ef;
+          text-shadow: 0 0 16px rgba(255, 79, 216, .72), 0 0 22px rgba(39, 216, 255, .48);
+          transform: translateY(-2px);
+        }
+        .creator-profile-link:focus-visible {
+          outline: 2px solid #bff6ff;
+          outline-offset: 4px;
         }
         .creator-name {
           margin: 1rem auto 0;
