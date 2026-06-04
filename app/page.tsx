@@ -70,6 +70,126 @@ const characters = [
   ["Maya", "/maya.png"],
 ];
 
+const foundationalModel = [
+  ["Awareness", "The observer noticing the temporary human experience from within it."],
+  ["Filter", "The lens through which reality is perceived, interpreted, and emotionally colored."],
+  ["Vessel", "The body and character moving through the world, making choices, and interacting."],
+  ["Experience", "Created through awareness, perception, choice, environment, and interaction."],
+];
+
+const earthSchoolSystems = [
+  {
+    title: "THE FILTER SYSTEM",
+    kicker: "Reality is not simply seen. It is filtered.",
+    text: "The player’s Filter affects visuals, lighting, sound, dialogue, opportunities, choices, and emotional interpretation.",
+  },
+  {
+    title: "THE ENVIRONMENT SYSTEM",
+    kicker: "Environment shapes the player more than motivation alone.",
+    text: "Locations such as the diner, forest, city, home, and vehicles affect awareness, emotion, habits, perception, and available choices.",
+  },
+  {
+    title: "AWARENESS AS PROGRESSION",
+    kicker: "Awareness replaces traditional XP.",
+    text: "Players progress by noticing patterns, loops, synchronicities, recurring lessons, emotional states, and hidden opportunities.",
+  },
+  {
+    title: "ATTENTION IS CURRENCY",
+    kicker: "Focus becomes a worldbuilding force.",
+    text: "What the player repeatedly focuses on begins to shape what appears, expands, or becomes available in the experience.",
+  },
+  {
+    title: "THE BOUNDARY SYSTEM",
+    kicker: "Boundaries are a core leveling mechanic.",
+    text: "Healthy boundaries affect energy, relationships, clarity, confidence, and awareness.",
+  },
+  {
+    title: "THE LOOP SYSTEM",
+    kicker: "Reality repeats until it is seen.",
+    text: "Recurring events, conversations, symbols, and lessons return until the player’s awareness shifts.",
+  },
+  {
+    title: "THE MIRROR CHARACTER SYSTEM",
+    kicker: "Some characters do not teach directly. They reflect.",
+    text: "Mrs. Chen is a mirror character. She reveals what the player is ready to notice.",
+  },
+];
+
+const archetypes = [
+  "Hero",
+  "Sage",
+  "Caregiver",
+  "Explorer",
+  "Creator",
+  "Innocent",
+  "Rebel",
+  "Magician",
+  "Lover",
+  "Ruler",
+  "Jester",
+  "Everyperson",
+  "Mirror",
+  "Challenger",
+  "Messenger",
+  "Awakener",
+  "Guardian",
+  "Builder",
+  "Observer",
+  "Catalyst",
+  "Teacher",
+  "Student",
+  "Wanderer",
+  "Boundary Keeper",
+  "Alchemist",
+  "Healer",
+  "Trickster",
+  "Ally",
+];
+
+const hudElements = [
+  ["Current Filter", "Curiosity"],
+  ["Awareness", "63%"],
+  ["Environment Influence", "+12%"],
+  ["Attention Focus", "Creation"],
+  ["Coherence", "High"],
+  ["Recurring Lesson", "Boundaries"],
+  ["Active Archetype", "Builder"],
+  ["Loop Status", "In Progress"],
+  ["Connection", "Mrs. Chen"],
+];
+
+const laws = [
+  "The Law of Attention",
+  "The Law of Environment",
+  "The Law of Reflection",
+  "The Law of Boundaries",
+  "The Law of Creation",
+  "The Law of Repetition",
+  "The Law of Authenticity",
+  "The Law of Connection",
+  "The Law of Compassion",
+];
+
+const awarenessLevels = [
+  "The Sleeper",
+  "The Observer",
+  "The Questioner",
+  "The Explorer",
+  "The Creator",
+  "The Curator",
+  "The Guide",
+  "The Architect",
+];
+
+const futureExpansions = [
+  "Expansion packs such as The Memory Veil, The Galactic Classroom, Dream Realms, and The Alchemist Expansion",
+  "Cosmetic customization such as retro diner themes, neon vehicles, clothing, apartments, awareness effects, and personal spaces",
+  "Premium reflection journal/vault",
+  "Optional community spaces and live events",
+  "Companion mobile/AR app with daily awareness prompts",
+  "Future creator marketplace for awareness journeys, environments, stories, and reflective experiences",
+];
+
 function FooterIcon({ name }: { name: "linkedin" | "website" }) {
   const icons = {
     linkedin: <path d="M6.5 8.5V18M6.5 5.8v.1M10.5 18v-5.3a3.2 3.2 0 0 1 6.4 0V18M10.5 8.5V18" />,
@@ -213,6 +333,130 @@ export default function Page() {
               <p>{text}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section id="how-earth-school-works" className="section systems-section" aria-labelledby="systems-title">
+        <p className="eyebrow">hidden systems behind the human experience</p>
+        <h2 id="systems-title">HOW EARTH SCHOOL WORKS</h2>
+        <p className="section-text strong">The hidden systems behind the temporary human experience.</p>
+
+        <div className="systems-block foundational-block" aria-labelledby="foundational-title">
+          <p className="eyebrow mini-eyebrow">core model</p>
+          <h3 id="foundational-title">THE FOUNDATIONAL MODEL</h3>
+          <p className="model-flow" aria-label="Awareness to Filter to Vessel to Experience">
+            <span>Awareness</span>
+            <b aria-hidden="true">→</b>
+            <span>Filter</span>
+            <b aria-hidden="true">→</b>
+            <span>Vessel</span>
+            <b aria-hidden="true">→</b>
+            <span>Experience</span>
+          </p>
+          <div className="systems-grid foundational-grid">
+            {foundationalModel.map(([title, text]) => (
+              <article className="system-card" key={title}>
+                <h4>{title}</h4>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="systems-grid systems-card-grid" aria-label="Core EARTH SCHOOL hidden systems">
+          {earthSchoolSystems.map((system) => (
+            <article className="system-card" key={system.title}>
+              <h3>{system.title}</h3>
+              <p className="system-kicker">{system.kicker}</p>
+              <p>{system.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="systems-block" aria-labelledby="archetype-title">
+          <p className="eyebrow mini-eyebrow">identity in motion</p>
+          <h3 id="archetype-title">THE ARCHETYPE SYSTEM</h3>
+          <p className="section-text">
+            Archetypes are inspired by Jungian, mythic, storytelling, behavioral, and EARTH SCHOOL-specific systems.
+          </p>
+          <div className="archetype-cloud" aria-label="EARTH SCHOOL archetypes">
+            {archetypes.map((archetype) => (
+              <span key={archetype}>{archetype}</span>
+            ))}
+          </div>
+          <p className="section-text">
+            Players are not locked into one archetype. They move through archetypes as they evolve.
+          </p>
+        </div>
+
+        <div className="systems-split">
+          <article className="system-card tall-card" aria-labelledby="behavior-title">
+            <p className="eyebrow mini-eyebrow">supportive pattern recognition</p>
+            <h3 id="behavior-title">THE BEHAVIOR PATTERN SYSTEM</h3>
+            <p>
+              Inspired by ethical behavioral observation, EARTH SCHOOL may reflect repeated choices,
+              avoidance patterns, emotional states, identity loops, reactions, and recurring behaviors
+              back to the player in a supportive way.
+            </p>
+            <p>
+              This is not framed as manipulation. It is awareness and pattern recognition: a way to
+              help players notice what keeps returning and choose with more clarity.
+            </p>
+          </article>
+
+          <article className="system-card hud-card" aria-labelledby="hud-title">
+            <p className="eyebrow mini-eyebrow">perception overlay</p>
+            <h3 id="hud-title">THE FILTER INTERFACE / HUD</h3>
+            <p>
+              HUD means Heads-Up Display. In EARTH SCHOOL, the HUD is an in-world perception overlay
+              seen through John’s glasses or awareness tools.
+            </p>
+            <dl className="hud-readout" aria-label="Sample EARTH SCHOOL HUD text">
+              {hudElements.map(([label, value]) => (
+                <div key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </article>
+        </div>
+
+        <div className="systems-block laws-block" aria-labelledby="laws-title">
+          <p className="eyebrow mini-eyebrow">operating principles</p>
+          <h3 id="laws-title">THE LAWS OF EARTH SCHOOL</h3>
+          <div className="law-grid">
+            {laws.map((law) => (
+              <span key={law}>{law}</span>
+            ))}
+          </div>
+        </div>
+
+        <div className="systems-block awareness-levels-block" aria-labelledby="levels-title">
+          <p className="eyebrow mini-eyebrow">progression map</p>
+          <h3 id="levels-title">AWARENESS LEVELS</h3>
+          <ol className="level-map">
+            {awarenessLevels.map((level) => (
+              <li key={level}>{level}</li>
+            ))}
+          </ol>
+          <p className="section-text strong">
+            The player is not becoming more powerful. The player is becoming more aware.
+          </p>
+        </div>
+
+        <div className="systems-block expansion-block" aria-labelledby="expansion-title">
+          <p className="eyebrow mini-eyebrow">future ecosystem</p>
+          <h3 id="expansion-title">FUTURE EXPERIENCE EXPANSIONS</h3>
+          <ul className="expansion-list">
+            {futureExpansions.map((expansion) => (
+              <li key={expansion}>{expansion}</li>
+            ))}
+          </ul>
+          <p className="section-text monetization-note">
+            EARTH SCHOOL will avoid pay-to-win mechanics. Future monetization should support creativity,
+            personalization, community, and deeper participation.
+          </p>
         </div>
       </section>
 
@@ -584,6 +828,7 @@ export default function Page() {
         }
         .section-card,
         .glass-card,
+        .system-card,
         .video-placeholder,
         .character-card {
           border: 1px solid var(--line);
@@ -661,6 +906,218 @@ export default function Page() {
           margin: .85rem 0 0;
           color: var(--muted);
           line-height: 1.6;
+        }
+        .systems-section {
+          width: min(100% - 1.5rem, 1240px);
+          position: relative;
+          isolation: isolate;
+        }
+        .systems-section::before {
+          content: "";
+          position: absolute;
+          inset: 2rem -4vw auto;
+          z-index: -1;
+          height: min(58rem, 64%);
+          background:
+            radial-gradient(circle at 18% 10%, rgba(255, 79, 216, .2), transparent 28rem),
+            radial-gradient(circle at 85% 28%, rgba(39, 216, 255, .18), transparent 30rem),
+            linear-gradient(180deg, rgba(11, 16, 42, .42), transparent);
+          filter: blur(4px);
+        }
+        .systems-block {
+          margin: clamp(2.25rem, 5vw, 4rem) auto 0;
+          padding: clamp(1.35rem, 4vw, 2.65rem);
+          border: 1px solid rgba(99, 229, 255, .3);
+          border-radius: 1.8rem;
+          background: linear-gradient(180deg, rgba(8, 13, 35, .72), rgba(5, 8, 24, .48));
+          box-shadow: inset 0 0 32px rgba(255, 79, 216, .05), 0 0 34px rgba(39, 216, 255, .1);
+        }
+        .foundational-block { max-width: 1040px; }
+        .mini-eyebrow {
+          margin-bottom: .75rem;
+          font-size: .68rem;
+          letter-spacing: .22em;
+        }
+        .systems-block h3,
+        .system-card h3 {
+          color: #ffffff;
+          text-shadow: 0 0 18px rgba(255, 79, 216, .42), 0 0 22px rgba(39, 216, 255, .32);
+        }
+        .system-card h4 {
+          margin: 0;
+          color: #ffffff;
+          font-size: clamp(.95rem, 1.8vw, 1.12rem);
+          letter-spacing: .14em;
+          text-transform: uppercase;
+          text-shadow: 0 0 14px rgba(39, 216, 255, .5);
+        }
+        .model-flow {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: .7rem;
+          margin: 1.6rem auto 0;
+          color: #ffffff;
+          font-size: clamp(1.05rem, 3vw, 1.9rem);
+          font-weight: 900;
+          letter-spacing: .08em;
+          line-height: 1.35;
+          text-transform: uppercase;
+        }
+        .model-flow span {
+          padding: .54rem .78rem;
+          border: 1px solid rgba(255, 134, 232, .46);
+          border-radius: 999px;
+          background: rgba(7, 14, 38, .68);
+          box-shadow: 0 0 18px rgba(255, 79, 216, .16);
+        }
+        .model-flow b { color: #8ff2ff; text-shadow: 0 0 14px rgba(39, 216, 255, .72); }
+        .systems-grid { display: grid; gap: 1rem; }
+        .foundational-grid {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+          margin-top: 1.6rem;
+        }
+        .systems-card-grid {
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+          margin-top: 1.3rem;
+        }
+        .system-card {
+          padding: clamp(1.1rem, 3vw, 1.65rem);
+          border-radius: 1.25rem;
+          text-align: left;
+        }
+        .system-card p {
+          margin: .85rem 0 0;
+          color: var(--muted);
+          font-size: clamp(.98rem, 1.65vw, 1.08rem);
+          line-height: 1.68;
+        }
+        .system-card .system-kicker {
+          color: #ffffff;
+          font-weight: 850;
+        }
+        .archetype-cloud,
+        .law-grid {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: .68rem;
+          margin: 1.6rem auto 0;
+        }
+        .archetype-cloud span,
+        .law-grid span {
+          border: 1px solid rgba(99, 229, 255, .38);
+          border-radius: 999px;
+          background: rgba(7, 14, 38, .7);
+          box-shadow: 0 0 16px rgba(39, 216, 255, .1), inset 0 0 16px rgba(255, 79, 216, .04);
+          color: #e9fbff;
+          font-size: .86rem;
+          font-weight: 800;
+          letter-spacing: .06em;
+          padding: .58rem .82rem;
+        }
+        .systems-split {
+          display: grid;
+          gap: 1rem;
+          margin-top: clamp(2.25rem, 5vw, 4rem);
+        }
+        .tall-card,
+        .hud-card { min-height: 100%; }
+        .hud-readout {
+          display: grid;
+          gap: .55rem;
+          margin: 1.35rem 0 0;
+          padding: 1rem;
+          border: 1px solid rgba(99, 229, 255, .32);
+          border-radius: 1rem;
+          background:
+            repeating-linear-gradient(180deg, rgba(255,255,255,.04) 0 1px, transparent 1px 8px),
+            rgba(1, 8, 20, .72);
+          box-shadow: inset 0 0 24px rgba(39, 216, 255, .08);
+        }
+        .hud-readout div {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: .85rem;
+          padding-bottom: .48rem;
+          border-bottom: 1px solid rgba(99, 229, 255, .15);
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        }
+        .hud-readout div:last-child { border-bottom: 0; padding-bottom: 0; }
+        .hud-readout dt {
+          color: #9ff1ff;
+          font-size: .78rem;
+          font-weight: 800;
+          letter-spacing: .06em;
+          text-transform: uppercase;
+        }
+        .hud-readout dd {
+          margin: 0;
+          color: #ffffff;
+          font-size: .9rem;
+          font-weight: 900;
+          text-align: right;
+          text-shadow: 0 0 12px rgba(255, 79, 216, .38);
+        }
+        .level-map {
+          display: grid;
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+          gap: .7rem;
+          margin: 1.6rem auto 0;
+          padding: 0;
+          list-style: none;
+          counter-reset: level;
+        }
+        .level-map li {
+          counter-increment: level;
+          display: flex;
+          align-items: center;
+          gap: .75rem;
+          padding: .82rem .95rem;
+          border: 1px solid rgba(255, 134, 232, .34);
+          border-radius: .95rem;
+          background: rgba(7, 14, 38, .68);
+          color: #ffffff;
+          font-weight: 850;
+          letter-spacing: .06em;
+          text-align: left;
+        }
+        .level-map li::before {
+          content: counter(level, decimal-leading-zero);
+          color: #8ff2ff;
+          font-size: .76rem;
+          text-shadow: 0 0 12px rgba(39, 216, 255, .62);
+        }
+        .expansion-list {
+          display: grid;
+          gap: .78rem;
+          max-width: 940px;
+          margin: 1.6rem auto 0;
+          padding: 0;
+          list-style: none;
+          text-align: left;
+        }
+        .expansion-list li {
+          position: relative;
+          padding: .85rem 1rem .85rem 2.35rem;
+          border: 1px solid rgba(99, 229, 255, .22);
+          border-radius: .95rem;
+          background: rgba(7, 14, 38, .58);
+          color: var(--muted);
+          line-height: 1.55;
+        }
+        .expansion-list li::before {
+          content: "✦";
+          position: absolute;
+          left: 1rem;
+          color: #ff9be8;
+          text-shadow: 0 0 12px rgba(255, 79, 216, .62);
+        }
+        .monetization-note {
+          padding-top: 1rem;
+          border-top: 1px solid rgba(99, 229, 255, .22);
         }
         .glow-panel { max-width: 900px; margin: 0 auto; }
         .mantra {
@@ -979,6 +1436,12 @@ export default function Page() {
           .footer-link { justify-content: center; }
           .journey-button { width: min(100%, 20rem); padding-inline: 1rem; }
           .journey-note { max-width: 27rem; }
+          .systems-section { width: min(100% - 1rem, 1180px); }
+          .model-flow { gap: .45rem; }
+          .model-flow span { width: 100%; }
+          .model-flow b { transform: rotate(90deg); }
+          .hud-readout div { align-items: flex-start; flex-direction: column; gap: .2rem; }
+          .hud-readout dd { text-align: left; }
         }
 
         @media (min-width: 700px) {
@@ -986,12 +1449,18 @@ export default function Page() {
           .awareness-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
           .collaborator-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
           .character-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          .foundational-grid,
+          .systems-card-grid,
+          .systems-split { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+          .level-map { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         @media (min-width: 1040px) {
           .pillars-grid,
           .awareness-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
           .glass-card { padding: 1.6rem; }
+          .systems-card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          .level-map { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
       `}</style>
     </main>
