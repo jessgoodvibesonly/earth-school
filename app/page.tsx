@@ -1,9 +1,10 @@
 const highlights = [
-  "Simulation theory meets spiritual gameplay",
-  "A shared MMO world built around awareness, choice, and reflection",
-  "The Lens reveals filters, loops, patterns, and hidden layers of reality",
-  "The Sanctuary vehicle becomes the player’s AI-guided spiritual hub",
-  "Players explore timelines, worlds, relationships, and consciousness-based progression",
+  "Awareness replaces XP",
+  "Reality responds to perception",
+  "Learn hidden patterns and loops",
+  "Explore multiple worlds and timelines",
+  "The Sanctuary becomes your AI companion",
+  "Multiplayer consciousness experience",
 ];
 
 const systems = [
@@ -53,9 +54,9 @@ export default function Page() {
 
       <section id="trailer" className="section cinematic-section" aria-labelledby="trailer-title">
         <p className="eyebrow">the first cinematic glimpse</p>
-        <h2 id="trailer-title">WATCH THE EARTH SCHOOL TRAILER</h2>
+        <h2 id="trailer-title">WATCH THE OFFICIAL CINEMATIC TRAILER</h2>
         <p className="section-text">
-          Created in 24 hours to bring the vision out of my head and onto the screen.
+          Created in 24 hours to bring the vision of EARTH SCHOOL to life.
         </p>
         <div className="video-frame">
           <iframe
@@ -63,21 +64,25 @@ export default function Page() {
             title="EARTH SCHOOL cinematic trailer"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
+            loading="lazy"
           />
         </div>
       </section>
 
       <section id="game" className="section" aria-labelledby="game-title">
-        <p className="eyebrow">what we are building</p>
-        <h2 id="game-title">A CONSCIOUSNESS MMO</h2>
         <p className="section-text strong">
-          EARTH SCHOOL is a game about waking up inside the system while still playing the game.
+          EARTH SCHOOL is a shared MMO where players explore consciousness through choices,
+          relationships, perception, and awareness. This first cinematic introduces the world,
+          the characters, and the beginning of the temporary human experience.
         </p>
-        <ul className="highlight-list">
+        <h2 id="game-title" className="feature-heading">WHAT MAKES EARTH SCHOOL DIFFERENT?</h2>
+        <div className="grid highlight-grid">
           {highlights.map((highlight) => (
-            <li key={highlight}>{highlight}</li>
+            <article className="glass-card highlight-card" key={highlight}>
+              <p>{highlight}</p>
+            </article>
           ))}
-        </ul>
+        </div>
       </section>
 
       <section className="section systems-section" aria-labelledby="systems-title">
@@ -95,10 +100,12 @@ export default function Page() {
 
       <section className="section vision-section" aria-labelledby="vision-title">
         <p className="eyebrow">the invitation</p>
-        <h2 id="vision-title">LET’S CHANGE CONSCIOUSNESS TOGETHER</h2>
-        <p className="section-text">
-          Learn the rules. Master your consciousness. Watch your life begin to reflect it.
-        </p>
+        <div className="closing-message">
+          <h2 id="vision-title">LEARN THE RULES</h2>
+          <p>Master your consciousness.</p>
+          <p>Watch your life begin to reflect it.</p>
+          <p>Let&apos;s Change Consciousness Together.</p>
+        </div>
         <a className="journey-button" href="https://forms.gle/K69a3SocVbaKEbtM9" target="_blank" rel="noopener noreferrer">
           JOIN THE JOURNEY
         </a>
@@ -311,30 +318,17 @@ export default function Page() {
           height: 100%;
           border: 0;
         }
-        .highlight-list {
-          display: grid;
-          gap: .8rem;
-          max-width: 900px;
-          margin: 2rem auto 0;
-          padding: 0;
-          list-style: none;
-          text-align: left;
-        }
-        .highlight-list li {
-          position: relative;
-          padding: .9rem 1rem .9rem 2.35rem;
-          border: 1px solid rgba(99, 229, 255, .22);
-          border-radius: .95rem;
-          background: rgba(7, 14, 38, .58);
-          color: var(--muted);
-          line-height: 1.55;
-        }
-        .highlight-list li::before {
-          content: "✦";
-          position: absolute;
-          left: 1rem;
-          color: #ff9be8;
-          text-shadow: 0 0 12px rgba(255, 79, 216, .62);
+        .feature-heading { margin-top: clamp(3rem, 7vw, 5rem); }
+        .highlight-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .highlight-card { min-height: 8rem; }
+        .highlight-card p {
+          margin: 0;
+          color: #ffffff;
+          font-weight: 850;
+          letter-spacing: .08em;
+          line-height: 1.45;
+          text-transform: uppercase;
+          text-shadow: 0 0 14px rgba(255, 79, 216, .55);
         }
         .grid { display: grid; gap: 1rem; margin-top: 2rem; }
         .systems-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); }
@@ -384,6 +378,16 @@ export default function Page() {
           box-shadow: 0 0 24px rgba(255, 79, 216, .54), 0 0 46px rgba(139, 92, 255, .38), inset 0 0 20px rgba(255, 255, 255, .1);
           transform: translateY(-3px);
         }
+        .closing-message p {
+          margin: .65rem auto 0;
+          color: #ffffff;
+          font-size: clamp(1.25rem, 3.8vw, 2.7rem);
+          font-weight: 850;
+          line-height: 1.15;
+          letter-spacing: .05em;
+          text-align: center;
+          text-shadow: 0 0 18px rgba(255, 79, 216, .72), 0 0 42px rgba(39, 216, 255, .55);
+        }
         .footer {
           padding: 2.5rem 1rem 4.5rem;
           border-top: 1px solid rgba(99, 229, 255, .28);
@@ -424,6 +428,7 @@ export default function Page() {
 
         @media (min-width: 700px) {
           .systems-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          .highlight-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
 
         @media (max-width: 560px) {
