@@ -228,6 +228,11 @@ export default function Page() {
             <p className="hero-copy-beats">They observe.<br />They choose.<br />They reflect.</p>
             <p>And the world responds.</p>
           </div>
+          <img
+            className="hero-creator-photo"
+            src="/jess-peace.png"
+            alt="Rev. Dr. Jessica Simmonds"
+          />
           <p className="awareness-statement">
             <span>AWARENESS IS THE INPUT.</span>
             <span>REALITY IS THE INTERFACE.</span>
@@ -785,6 +790,16 @@ export default function Page() {
         .hero-copy p { margin: .55rem 0 0; }
         .hero-copy p:first-child { margin-top: 0; }
         .hero-copy-beats { color: #ffffff; font-weight: 750; letter-spacing: .08em; }
+        .hero-creator-photo {
+          display: block;
+          width: 160px;
+          height: 160px;
+          margin: 1.7rem auto 0;
+          border: 2px solid rgba(255, 255, 255, .86);
+          border-radius: 50%;
+          object-fit: cover;
+          box-shadow: 0 0 22px rgba(255, 255, 255, .36), 0 0 36px rgba(39, 216, 255, .18);
+        }
         .awareness-statement {
           display: grid;
           gap: .2rem;
