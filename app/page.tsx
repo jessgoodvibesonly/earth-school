@@ -218,6 +218,24 @@ export default function Page() {
           <p className="eyebrow hero-eyebrow">WHERE AWARENESS SHAPES REALITY</p>
           <h1 id="hero-title">EARTH SCHOOL</h1>
           <p className="hero-subheadline">A Temporary Human Experience</p>
+          <div className="hero-actions">
+            <a
+              className="journey-button"
+              href="https://forms.gle/K69a3SocVbaKEbtM9"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              JOIN THE JOURNEY
+            </a>
+            <a
+              className="vision-deck-button"
+              href="https://earth-school-pitch-deck-ub2t.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore the Vision Deck
+            </a>
+          </div>
           <figure className="hero-quote">
             <blockquote>“Can you see your own face right now?”</blockquote>
             <figcaption>— Rev. Dr. Jessica Simmonds</figcaption>
@@ -755,6 +773,39 @@ export default function Page() {
           letter-spacing: .18em;
           text-transform: uppercase;
         }
+        .hero-actions {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: .85rem;
+          margin: 1.6rem auto 0;
+        }
+        .hero-actions .journey-button { min-width: 12.8rem; }
+        .vision-deck-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 3.25rem;
+          padding: .9rem 1.5rem;
+          border: 1px solid rgba(159, 241, 255, .7);
+          border-radius: 999px;
+          background: rgba(5, 16, 38, .48);
+          box-shadow: inset 0 0 18px rgba(39, 216, 255, .08);
+          color: #dffaff;
+          font-size: .88rem;
+          font-weight: 800;
+          letter-spacing: .1em;
+          text-decoration: none;
+          transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease, background .22s ease;
+        }
+        .vision-deck-button:hover,
+        .vision-deck-button:focus-visible {
+          border-color: #bff6ff;
+          background: rgba(24, 74, 111, .58);
+          box-shadow: 0 0 22px rgba(39, 216, 255, .36), inset 0 0 18px rgba(39, 216, 255, .12);
+          transform: translateY(-3px);
+        }
+        .vision-deck-button:focus-visible { outline: 2px solid #ffb8ee; outline-offset: 4px; }
         .hero-quote { margin: 1.6rem auto 0; }
         .hero-quote blockquote,
         .quote-section blockquote {
@@ -1484,6 +1535,9 @@ export default function Page() {
           .eyebrow { font-size: .68rem; letter-spacing: .18em; }
           .hero-eyebrow { font-size: clamp(.56rem, 2.55vw, .68rem); letter-spacing: .2em; }
           .hero-subheadline { letter-spacing: .1em; }
+          .hero-actions { display: grid; gap: .7rem; width: min(100%, 20rem); }
+          .hero-actions .journey-button,
+          .vision-deck-button { width: 100%; }
           .section { width: min(100% - 1.25rem, 1180px); }
           .glass-card { min-height: 10rem; }
           .footer-links { display: grid; }
