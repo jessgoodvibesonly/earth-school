@@ -230,7 +230,7 @@ export default function Page() {
           </div>
           <img
             className="hero-creator-photo"
-            src="/jess-peace.png"
+            src="/me.png"
             alt="Rev. Dr. Jessica Simmonds"
           />
           <p className="awareness-statement">
